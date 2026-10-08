@@ -102,7 +102,7 @@
       "predictive_decision": "not_falsified_not_validated",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "energia",
+      "sector": "energy",
       "scenario": "compatible",
       "seed": 20261008,
       "metadata": {
@@ -199,7 +199,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "energia",
+      "sector": "energy",
       "scenario": "additive_violation",
       "seed": 20261009,
       "metadata": {
@@ -296,7 +296,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "energia",
+      "sector": "energy",
       "scenario": "interaction_violation",
       "seed": 20261010,
       "metadata": {
@@ -393,7 +393,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "energia",
+      "sector": "energy",
       "scenario": "nonlinear_violation",
       "seed": 20261011,
       "metadata": {
@@ -490,7 +490,7 @@
       "predictive_decision": "not_falsified_not_validated",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "ingegneria",
+      "sector": "engineering",
       "scenario": "compatible",
       "seed": 20261108,
       "metadata": {
@@ -587,7 +587,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "ingegneria",
+      "sector": "engineering",
       "scenario": "additive_violation",
       "seed": 20261109,
       "metadata": {
@@ -684,7 +684,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "ingegneria",
+      "sector": "engineering",
       "scenario": "interaction_violation",
       "seed": 20261110,
       "metadata": {
@@ -781,7 +781,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "ingegneria",
+      "sector": "engineering",
       "scenario": "nonlinear_violation",
       "seed": 20261111,
       "metadata": {
@@ -878,7 +878,7 @@
       "predictive_decision": "not_falsified_not_validated",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "fisica",
+      "sector": "physics",
       "scenario": "compatible",
       "seed": 20261208,
       "metadata": {
@@ -975,7 +975,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "fisica",
+      "sector": "physics",
       "scenario": "additive_violation",
       "seed": 20261209,
       "metadata": {
@@ -1072,7 +1072,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "fisica",
+      "sector": "physics",
       "scenario": "interaction_violation",
       "seed": 20261210,
       "metadata": {
@@ -1169,7 +1169,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "fisica",
+      "sector": "physics",
       "scenario": "nonlinear_violation",
       "seed": 20261211,
       "metadata": {
@@ -1266,7 +1266,7 @@
       "predictive_decision": "not_falsified_not_validated",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "matematica",
+      "sector": "mathematics",
       "scenario": "compatible",
       "seed": 20261308,
       "metadata": {
@@ -1363,7 +1363,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "matematica",
+      "sector": "mathematics",
       "scenario": "additive_violation",
       "seed": 20261309,
       "metadata": {
@@ -1460,7 +1460,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "matematica",
+      "sector": "mathematics",
       "scenario": "interaction_violation",
       "seed": 20261310,
       "metadata": {
@@ -1557,7 +1557,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "matematica",
+      "sector": "mathematics",
       "scenario": "nonlinear_violation",
       "seed": 20261311,
       "metadata": {
@@ -1654,7 +1654,7 @@
       "predictive_decision": "not_falsified_not_validated",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "economia",
+      "sector": "economics",
       "scenario": "compatible",
       "seed": 20261408,
       "metadata": {
@@ -1751,7 +1751,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "economia",
+      "sector": "economics",
       "scenario": "additive_violation",
       "seed": 20261409,
       "metadata": {
@@ -1848,7 +1848,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "economia",
+      "sector": "economics",
       "scenario": "interaction_violation",
       "seed": 20261410,
       "metadata": {
@@ -1945,7 +1945,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "economia",
+      "sector": "economics",
       "scenario": "nonlinear_violation",
       "seed": 20261411,
       "metadata": {
@@ -2042,7 +2042,7 @@
       "predictive_decision": "not_falsified_not_validated",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "psicologia",
+      "sector": "psychology",
       "scenario": "compatible",
       "seed": 20261508,
       "metadata": {
@@ -2139,7 +2139,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "psicologia",
+      "sector": "psychology",
       "scenario": "additive_violation",
       "seed": 20261509,
       "metadata": {
@@ -2236,7 +2236,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "psicologia",
+      "sector": "psychology",
       "scenario": "interaction_violation",
       "seed": 20261510,
       "metadata": {
@@ -2333,7 +2333,7 @@
       "predictive_decision": "falsified_operationally",
       "margin_mse": 0.02,
       "bootstrap": 1000,
-      "sector": "psicologia",
+      "sector": "psychology",
       "scenario": "nonlinear_violation",
       "seed": 20261511,
       "metadata": {

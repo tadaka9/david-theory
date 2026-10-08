@@ -8,14 +8,14 @@ import platform
 from pathlib import Path
 import numpy as np
 
-SECTORS = ('energia', 'ingegneria', 'fisica', 'matematica', 'economia', 'psicologia')
+SECTORS = ('energy', 'engineering', 'physics', 'mathematics', 'economics', 'psychology')
 SCENARIOS = ('compatible', 'additive_violation', 'interaction_violation', 'nonlinear_violation')
 MODELS = ('theory', 'additive', 'interaction', 'nonlinear')
 
 
 def generate(n: int, seed: int, scenario: str) -> np.ndarray:
     if n < 80 or scenario not in SCENARIOS:
-        raise ValueError('n >= 80 e scenario conosciuto richiesti')
+        raise ValueError('n >= 80 and a known scenario are required')
     rng = np.random.default_rng(seed)
     E = rng.uniform(1, 5, n)
     h = rng.uniform(0, 2, n)
@@ -33,11 +33,11 @@ def generate(n: int, seed: int, scenario: str) -> np.ndarray:
 def validate(data: np.ndarray) -> np.ndarray:
     data = np.asarray(data, dtype=float)
     if data.ndim != 2 or data.shape[1] != 3 or len(data) < 80:
-        raise ValueError('Servono almeno 80 righe e colonne E,h,H')
+        raise ValueError('At least 80 rows and columns E,h,H are required')
     if not np.isfinite(data).all():
-        raise ValueError('Valori mancanti/non finiti non ammessi')
+        raise ValueError('Missing or non-finite values are not allowed')
     if np.linalg.matrix_rank(design(data, 'additive')) < 3:
-        raise ValueError('Predittori degeneri: parametri non identificabili')
+        raise ValueError('Degenerate predictors: parameters are not identifiable')
     return data
 
 
@@ -55,10 +55,10 @@ def fit_predict(train: np.ndarray, test: np.ndarray, model: str) -> np.ndarray:
     if model == 'theory':
         return test[:, 0] - test[:, 1]
     if model not in MODELS:
-        raise ValueError('Modello sconosciuto')
+        raise ValueError('Unknown model')
     X = design(train, model)
     if np.linalg.matrix_rank(X) < X.shape[1]:
-        raise ValueError('Design non identificabile')
+        raise ValueError('Design is not identifiable')
     beta = np.linalg.lstsq(X, train[:, 2], rcond=None)[0]
     return design(test, model) @ beta
 
@@ -77,7 +77,7 @@ def analyze(data: np.ndarray, seed: int = 20261008, bootstrap: int = 1000,
             margin: float = .02, ordered: bool = False) -> tuple[dict, dict]:
     data = validate(data)
     if bootstrap < 100 or margin < 0:
-        raise ValueError('bootstrap >= 100 e margin >= 0 richiesti')
+        raise ValueError('bootstrap >= 100 and margin >= 0 are required')
     tr, va, te = split_indices(len(data), seed, ordered)
     train, val, test = data[tr], data[va], data[te]
     val_mse = {m: float(np.mean((val[:, 2] - fit_predict(train, val, m))**2)) for m in MODELS}
@@ -134,7 +134,7 @@ def load_csv(path: Path) -> np.ndarray:
     with path.open(newline='', encoding='utf-8-sig') as f:
         reader = csv.DictReader(f)
         if reader.fieldnames is None or not {'E', 'h', 'H'} <= set(reader.fieldnames):
-            raise ValueError('CSV deve contenere E,h,H')
+            raise ValueError('CSV must contain E,h,H')
         return validate(np.array([[float(r[k]) for k in ('E', 'h', 'H')] for r in reader]))
 
 
@@ -143,13 +143,13 @@ def run(args):
     out.mkdir(parents=True, exist_ok=True)
     if args.csv:
         if not args.metadata:
-            raise ValueError('--metadata necessario per dati esterni')
+            raise ValueError('--metadata is required for external data')
         meta = json.loads(args.metadata.read_text(encoding='utf-8'))
         for key in ('sector', 'source', 'unit', 'H_definition', 'E_definition', 'h_definition', 'independent_H', 'sampling'):
             if key not in meta:
-                raise ValueError(f'Metadata mancante: {key}')
+                raise ValueError(f'Missing metadata: {key}')
         if meta['independent_H'] is not True or meta['sampling'] != 'iid':
-            raise ValueError('Questo harness richiede H indipendente e campionamento iid; per serie/panel serve bootstrap a blocchi/cluster')
+            raise ValueError('This harness requires independently observed H and iid sampling; time series and panels require block or cluster bootstrap')
         jobs = [(meta['sector'], 'external', args.seed, load_csv(args.csv), meta)]
     else:
         jobs = [(sector, scenario, args.seed + i * 100 + j,
@@ -170,21 +170,21 @@ def run(args):
                'numpy': np.__version__, 'config': {k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()},
                'results': results}
     (out / 'results.json').write_text(json.dumps(payload, indent=2, allow_nan=False), encoding='utf-8')
-    lines = ['# Risultati H = E − h', '',
-             'DATI SINTETICI: verifica del metodo, nessuna validazione empirica reale.' if not args.csv else 'DATI ESTERNI: provenienza dichiarata dall’utente, non verificata automaticamente.', '',
-             '| Settore | Scenario | RMSE teoria | RMSE baseline scelta | Esito operativo |',
+    lines = ['# H = E - h results', '',
+             'SYNTHETIC DATA: method verification only; no real empirical validation.' if not args.csv else 'EXTERNAL DATA: user-declared provenance; not automatically verified.', '',
+             '| Field | Scenario | Theory RMSE | Selected-baseline RMSE | Operational decision |',
              '|---|---|---:|---:|---|']
     for r in results:
         m = r['test_metrics']
         lines.append(f"| {r['sector']} | {r['scenario']} | {m['theory']['rmse']:.4f} | {m[r['selected_baseline_before_test']]['rmse']:.4f} | {r['predictive_decision']} |")
-    lines += ['', '## Interpretazione', '',
-              'La mancata falsificazione non prova la formula. Ogni scenario compatibile è generato dalla formula stessa: il successo è un controllo positivo del software.',
-              'Delta MSE positivo favorisce la baseline. Falsificazione operativa: limite inferiore del CI maggiore del margine MSE prefissato. Il CI nominale simultaneo 95% usa Bonferroni sui tre confronti all’interno di ogni caso; non corregge globalmente i 24 casi.',
-              'Bootstrap percentile iid del test: incertezza condizionata ai modelli stimati, non include la variabilità di training. Bootstrap delle righe di sviluppo: CI dei coefficienti additivi, diagnostico e non prova di equivalenza.',
-              'Restrizioni additive: intercetta 0, coefficiente E 1, coefficiente h −1. Se il modello additivo è mal specificato, il loro rigetto non costituisce da solo una falsificazione strutturale.',
-              'Modello nonlineare: polinomio quadratico, non rappresenta tutte le alternative nonlineari. Nessuna inferenza causale. Un solo split non dimostra robustezza rispetto al campionamento.',
-              'Le sei etichette settoriali usano lo stesso banco di prova astratto con semi diversi: non sono sei esperimenti disciplinari reali. In matematica i risultati numerici non sostituiscono una dimostrazione.',
-              'Dettagli, intervalli e configurazione: results.json. Indici dello split e previsioni: case_*/audit.json.']
+    lines += ['', '## Interpretation', '',
+              'Failure to falsify does not prove the formula. Each compatible scenario is generated from the formula itself and serves as a software positive control.',
+              'Positive delta MSE favors the baseline. Operational falsification requires the lower confidence bound to exceed the prespecified MSE margin. The nominal simultaneous 95% interval uses Bonferroni correction across three within-case comparisons and does not globally correct all 24 cases.',
+              'The iid percentile bootstrap on test rows is conditional on fitted models and excludes training variability. The development-row coefficient bootstrap is diagnostic and not evidence of equivalence.',
+              'Additive restrictions are intercept 0, E coefficient 1, and h coefficient -1. If the additive model is misspecified, rejecting these restrictions alone is not structural falsification.',
+              'The nonlinear model is quadratic and does not represent every nonlinear alternative. No causal inference is made. A single split does not establish sampling robustness.',
+              'The six field labels use the same abstract harness with different seeds; they are not six real disciplinary experiments. Numerical results do not replace proof in mathematics.',
+              'See results.json for details, intervals, and configuration; see case_*/audit.json for split indices and predictions.']
     (out / 'REPORT.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
     print(f'Report: {out / "REPORT.md"}')
 
@@ -196,7 +196,7 @@ def parser():
     p.add_argument('--seed', type=int, default=20261008)
     p.add_argument('--bootstrap', type=int, default=1000)
     p.add_argument('--margin', type=float, default=.02)
-    p.add_argument('--ordered', action='store_true', help='Split per ordine righe; bootstrap resta iid')
+    p.add_argument('--ordered', action='store_true', help='Split in row order; bootstrap remains iid')
     p.add_argument('--csv', type=Path)
     p.add_argument('--metadata', type=Path)
     return p
@@ -207,4 +207,4 @@ if __name__ == '__main__':
     try:
         run(p.parse_args())
     except (ValueError, OSError, json.JSONDecodeError) as exc:
-        p.exit(2, f'Errore: {exc}\n')
+        p.exit(2, f'Error: {exc}\n')

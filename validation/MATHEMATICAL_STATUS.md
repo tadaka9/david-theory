@@ -1,19 +1,19 @@
-# Stato matematico di H = E - h
+# Mathematical status of H = E - h
 
-## Teorema definitorio
+## Definitional theorem
 
-Sia `G` un gruppo abeliano additivo e siano `E,h` elementi di `G`. Definendo `H := E-h`, esiste un unico `H` che soddisfa `H+h=E`.
+Let `G` be an additive abelian group and let `E,h` be elements of `G`. If `H := E-h`, there is a unique `H` satisfying `H+h=E`.
 
-**Dimostrazione.** Esistenza: `H=E+(-h)` e quindi `H+h=E+((-h)+h)=E`. Unicità: se `H1+h=E` e `H2+h=E`, sommando `-h` ai due membri si ottiene `H1=E-h=H2`.
+**Proof.** Existence: `H=E+(-h)`, hence `H+h=E+((-h)+h)=E`. Uniqueness: if `H1+h=E` and `H2+h=E`, adding `-h` to both equations gives `H1=E-h=H2`.
 
-Su numeri reali non negativi, `H` può essere negativo. Se il codominio imposto a `H` è anch'esso non negativo, bisogna aggiungere l'ipotesi `E>=h` oppure cambiare la definizione, per esempio usando la parte positiva. Quella modifica produce una formula diversa.
+Over the nonnegative reals, `H` can be negative. If `H` is also required to be nonnegative, the model must add `E>=h` or change the definition, for example by using the positive part. That modification creates a different formula.
 
-## Cosa la dimostrazione non stabilisce
+## What the proof does not establish
 
-La dimostrazione certifica una definizione algebrica. Non mostra che esistano nel mondo una “magnitudine fenomenica” e una “capacità trasformativa”, che condividano una scala, o che un esito osservato indipendentemente debba coincidere con la loro differenza.
+The proof certifies an algebraic definition. It does not show that a phenomenal magnitude and a transformative capacity exist in the world, share a scale, or force an independently observed outcome to equal their difference.
 
-Se `H`, `E` e `h` sono tre quantità indipendentemente assegnate, l'enunciato universale è falso senza ulteriori assiomi: `E=3`, `h=1`, `H=4` è un controesempio. Per ottenere un teorema sostantivo occorre definire dominio, funzioni di misura e assiomi che implichino l'uguaglianza senza assumerla come definizione.
+If `H`, `E`, and `h` are assigned independently, the unconstrained universal statement is false: `E=3`, `h=1`, `H=4` is a counterexample. A substantive theorem requires a domain, measurement functions, and axioms that imply the equality without assuming it as a definition.
 
-## Confronto con E = mc²
+## Comparison with E = mc²
 
-Le due scritture non hanno lo stesso stato scientifico. `E=mc²` collega grandezze fisiche con unità definite, deriva dalla relatività speciale ed è sottoposta a test fisici quantitativi. Nel documento originale di David, `E` non è necessariamente energia fisica e `h` non è la costante di Planck. `H=E-h` è quindi confrontabile con `E=mc²` soltanto per brevità grafica, non per contenuto, derivazione o supporto empirico.
+The formulas do not have the same scientific status. `E=mc²` connects physical quantities with defined units, follows from special relativity, and has quantitative experimental support. In David's original paper, `E` is not necessarily physical energy and `h` is not Planck's constant. `H=E-h` resembles `E=mc²` only in visual brevity, not in content, derivation, or empirical support.

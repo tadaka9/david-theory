@@ -1,10 +1,10 @@
 {
-  "sector": "economia",
-  "source": "SOSTITUIRE: fonte, licenza, periodo e protocollo",
-  "unit": "SOSTITUIRE: stessa unità per E, h e H",
-  "H_definition": "SOSTITUIRE: esito osservato indipendentemente",
-  "E_definition": "SOSTITUIRE: risorsa iniziale",
-  "h_definition": "SOSTITUIRE: perdita o vincolo misurato",
+  "sector": "economics",
+  "source": "REPLACE: source, license, period, and protocol",
+  "unit": "REPLACE: common unit for E, h, and H",
+  "H_definition": "REPLACE: independently observed outcome",
+  "E_definition": "REPLACE: initial resource",
+  "h_definition": "REPLACE: measured loss or constraint",
   "independent_H": false,
-  "sampling": "SOSTITUIRE: iid solo se giustificato"
+  "sampling": "REPLACE: iid only when justified"
 }

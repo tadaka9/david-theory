@@ -48,7 +48,7 @@ def verify_archive(raw: bytes) -> str:
     digest = hashlib.sha256(raw).hexdigest()
     if digest != EXPECTED_ZIP_SHA256:
         raise ValueError(
-            f"Hash archivio inatteso: {digest}. Atteso: {EXPECTED_ZIP_SHA256}"
+            f"Unexpected archive hash: {digest}. Expected: {EXPECTED_ZIP_SHA256}"
         )
     return digest
 
@@ -84,22 +84,22 @@ def _mean_groups(row: tuple, positions: dict[str, int], groups: list[list[str]])
 
 def load_raw_scores(raw_zip: bytes, sample: str = "formal") -> np.ndarray:
     if sample not in ("formal", "pilot"):
-        raise ValueError("Campione deve essere formal o pilot")
+        raise ValueError("Sample must be formal or pilot")
     verify_archive(raw_zip)
     with zipfile.ZipFile(io.BytesIO(raw_zip)) as archive:
         try:
             workbook_bytes = archive.read(WORKBOOK_MEMBER)
         except KeyError as exc:
-            raise ValueError("Workbook atteso non presente nell'archivio") from exc
+            raise ValueError("Expected workbook is missing from the archive") from exc
     workbook = load_workbook(io.BytesIO(workbook_bytes), read_only=True, data_only=True)
     sheet_name = SHEET if sample == "formal" else PILOT_SHEET
     if sheet_name not in workbook.sheetnames:
-        raise ValueError(f"Foglio mancante: {sheet_name}")
+        raise ValueError(f"Missing sheet: {sheet_name}")
     sheet = workbook[sheet_name]
     rows = sheet.iter_rows(values_only=True)
     headers = next(rows, None)
     if headers is None:
-        raise ValueError("Workbook vuoto")
+        raise ValueError("Workbook is empty")
     positions = {name: i for i, name in enumerate(headers)}
     required = (
         (RESOURCE_COLUMN, DEMAND_COLUMN, BURNOUT_COLUMN)
@@ -113,7 +113,7 @@ def load_raw_scores(raw_zip: bytes, sample: str = "formal") -> np.ndarray:
     )
     missing = [name for name in required if name not in positions]
     if missing:
-        raise ValueError(f"Colonne mancanti: {missing}")
+        raise ValueError(f"Missing columns: {missing}")
     values = []
     for row in rows:
         selected = [row[positions[name]] for name in required]
@@ -131,12 +131,12 @@ def load_raw_scores(raw_zip: bytes, sample: str = "formal") -> np.ndarray:
                     ]
                 )
         except (TypeError, ValueError) as exc:
-            raise ValueError("Valore non numerico nelle scale selezionate") from exc
+            raise ValueError("Non-numeric value in selected scales") from exc
     data = np.asarray(values, dtype=float)
     if data.ndim != 2 or data.shape[0] < 80 or data.shape[1] != 3:
-        raise ValueError("Dati validi insufficienti")
+        raise ValueError("Insufficient valid data")
     if not np.isfinite(data).all():
-        raise ValueError("Valori non finiti nelle scale selezionate")
+        raise ValueError("Non-finite values in selected scales")
     return data
 
 
@@ -150,7 +150,7 @@ def operationalize(raw_scores: np.ndarray, seed: int) -> tuple[np.ndarray, dict]
     means = raw_scores[train].mean(axis=0)
     scales = raw_scores[train].std(axis=0, ddof=1)
     if np.any(scales <= 0):
-        raise ValueError("Scala costante nel training")
+        raise ValueError("A training scale is constant")
     standardized = (raw_scores - means) / scales
     data = np.column_stack(
         (standardized[:, 0], standardized[:, 1], -standardized[:, 2])
@@ -223,25 +223,25 @@ def run(args: argparse.Namespace) -> dict:
     selected = result["selected_baseline_before_test"]
     metrics = result["test_metrics"]
     comparison = result["comparisons"][selected]
-    report = f"""# Verifica empirica esplorativa: psicologia del lavoro ({args.sample})
+    report = f"""# Exploratory empirical test: occupational psychology ({args.sample})
 
-**Dati reali, analisi esplorativa. Non è una validazione confermativa della formula universale.**
+**Real data, exploratory analysis. This is not confirmatory validation of a universal formula.**
 
-- Fonte: {SOURCE_RECORD}
-- Campione completo analizzato: {len(data)} rispondenti
-- Ruolo del campione: {args.sample}
-- Specifica: `H=-z(burnout)`, `E=z(job resources)`, `h=z(job demands)`
-- Trasformazioni stimate soltanto sul training
+- Source: {SOURCE_RECORD}
+- Complete sample analyzed: {len(data)} respondents
+- Sample role: {args.sample}
+- Specification: `H=-z(burnout)`, `E=z(job resources)`, `h=z(job demands)`
+- Transformations fitted on training data only
 - Split: {result['split_sizes']} (training, validation, test)
-- Baseline scelta sulla validation: {selected}
-- RMSE teoria sul test: {metrics['theory']['rmse']:.4f}
-- RMSE baseline scelta sul test: {metrics[selected]['rmse']:.4f}
-- Delta MSE teoria meno baseline: {comparison['delta_mse_theory_minus_baseline']:.4f}
-- CI simultaneo 95% del delta: {comparison['ci_simultaneous_95']}
-- Margine preregistrato nel codice: {args.margin:.4f} unità standardizzate²
-- Esito operativo: `{result['predictive_decision']}`
+- Baseline selected on validation: {selected}
+- Theory RMSE on test: {metrics['theory']['rmse']:.4f}
+- Selected-baseline RMSE on test: {metrics[selected]['rmse']:.4f}
+- Delta MSE, theory minus baseline: {comparison['delta_mse_theory_minus_baseline']:.4f}
+- Simultaneous 95% interval for delta: {comparison['ci_simultaneous_95']}
+- Margin prespecified in code: {args.margin:.4f} squared standardized units
+- Operational decision: `{result['predictive_decision']}`
 
-L'esito riguarda esclusivamente l'estensione predittiva che identifica il residuo con il benessere standardizzato; la relazione centrale H:=E-h resta un'identità definitoria. La standardizzazione rende confrontabili le scale numeriche, ma non dimostra che i costrutti abbiano la stessa unità sostantiva. Il dataset è trasversale; non identifica causalità. Poiché l'ipotesi e il margine non furono preregistrati prima della raccolta dei dati, questo risultato genera una specifica da replicare prospetticamente.
+The result concerns only the predictive extension that identifies the residual with standardized well-being; the central relation H:=E-h remains a definitional identity. Standardization makes numerical scales comparable but does not prove that the constructs share a substantive unit. The dataset is cross-sectional and does not identify causality. Because the hypothesis and margin were not preregistered before collection, this result defines a specification for prospective replication.
 """
     (args.out / "REPORT.md").write_text(report, encoding="utf-8")
     return payload
@@ -264,4 +264,4 @@ if __name__ == "__main__":
     try:
         run(arguments)
     except (OSError, ValueError, zipfile.BadZipFile) as exc:
-        raise SystemExit(f"Errore: {exc}") from exc
+        raise SystemExit(f"Error: {exc}") from exc

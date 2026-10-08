@@ -1,14 +1,14 @@
-# Audit empirico economico: contabilità nazionale 2022
+# Empirical economics audit: national accounts 2022
 
-**Dati reali World Bank. Audit di coerenza contabile, non validazione indipendente.**
+**Real World Bank data. Accounting consistency audit, not independent validation.**
 
-- Serie complete congiunte: 158
+- Complete joined series: 158
 - E: GNI (current US$), `NY.GNP.MKTP.CD`
 - h: final consumption expenditure (current US$), `NE.CON.TOTL.CD`
 - H: gross savings (current US$), `NY.GNS.ICTR.CD`
-- Mediana di `|H-(E-h)|/|E|`: 3.5473%
-- 90° percentile: 18.3638%
-- Quota entro 1% del GNI: 29.75%
-- Quota entro 5% del GNI: 60.13%
+- Median `|H-(E-h)|/|E|`: 3.5473%
+- 90th percentile: 18.3638%
+- Share within 1% of GNI: 29.75%
+- Share within 5% of GNI: 60.13%
 
-La definizione World Bank specifica che il risparmio lordo è reddito nazionale lordo meno consumo totale **più trasferimenti netti**. La formula ridotta omette quindi un termine noto. Inoltre le serie provengono dallo stesso sistema di contabilità nazionale. Una corrispondenza misura coerenza del database; una discrepanza può rappresentare trasferimenti netti, revisioni, differenze di copertura o aggregati sovranazionali. Non è un test causale né una conferma indipendente della teoria percettiva.
+World Bank metadata defines gross savings as gross national income minus total consumption **plus net transfers**. The reduced formula therefore omits a known term. The series also come from the same national-accounts system. Agreement measures database consistency; a discrepancy may represent net transfers, revisions, coverage differences, or supranational aggregates. This is neither a causal test nor independent confirmation of the perceptual theory.

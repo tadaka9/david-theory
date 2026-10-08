@@ -1,19 +1,19 @@
-# Preregistrazione prospettica v1
+# Prospective preregistration v1
 
-Data di redazione: 8 ottobre 2026. Diventa temporalmente verificabile quando il commit viene pubblicato. Vale soltanto per dati raccolti o resi accessibili dopo quel commit; non retrodata le analisi già svolte.
+Drafted on October 8, 2026. It becomes time-verifiable when committed publicly. It applies only to data collected or first made accessible after that commit and does not retroactively preregister completed analyses.
 
-## Ipotesi primaria psicologica futura
+## Primary future psychology hypothesis
 
-In un nuovo campione indipendente, con le stesse scale del dataset Zenodo 21153011, si definiscono sul solo training `E=z(risorse lavorative)`, `h=z(richieste lavorative)` e l'estensione esterna `Y=-z(burnout)`. La relazione centrale definisce `H:=E-h`; la previsione empirica separata è `Y=H`.
+In a new independent sample using the scales from Zenodo dataset 21153011, define from training data only `E=z(job resources)`, `h=z(job demands)`, and the external outcome `Y=-z(burnout)`. The central relation defines `H:=E-h`; the separate empirical prediction is `Y=H`.
 
-Confronti prefissati: previsione a coefficienti fissi; modello additivo libero; additivo con interazione; quadratico. Split 60/20/20 con seme 20261008. Baseline scelta sulla validation, test aperto una sola volta. Metriche primarie: MSE e differenza paired fra teoria e ciascuna baseline. Bootstrap 10.000 repliche, correzione Bonferroni sui tre confronti. Margine: 0,05 unità standardizzate al quadrato.
+Prespecified comparisons: fixed-coefficient prediction, free additive model, additive model with interaction, and quadratic model. Use a 60/20/20 split with seed 20261008. Select the baseline on validation data and open the test set once. Primary metrics are MSE and the paired difference between the theory and each baseline. Use 10,000 bootstrap repetitions and Bonferroni correction across the three comparisons. The margin is 0.05 squared standardized units.
 
-La previsione `Y=H` è falsificata operativamente se il limite inferiore simultaneo della differenza MSE teoria meno almeno una baseline supera 0,05. La mancata falsificazione non dimostra equivalenza: un test di equivalenza e una soglia di precisione devono essere aggiunti prima della raccolta se si vuole sostenere compatibilità.
+Operationally falsify `Y=H` if the simultaneous lower confidence bound for theory MSE minus at least one baseline MSE exceeds 0.05. Failure to falsify does not establish equivalence; an equivalence test and precision threshold must be added before collection if compatibility is to be claimed.
 
-## Ipotesi fisico-ingegneristica futura
+## Future physical and engineering hypothesis
 
-Usare il protocollo in `LAB_PROTOCOL.md`. Il margine di equivalenza sarà determinato dal budget di incertezza strumentale e inserito in una nuova versione della preregistrazione prima di acquisire dati. Senza questa quantità l'esperimento non deve essere presentato come confermativo.
+Use `LAB_PROTOCOL.md`. Determine the equivalence margin from the instrument uncertainty budget and record it in a new preregistration version before acquiring data. Without that value, the experiment must not be described as confirmatory.
 
-## Trasparenza
+## Transparency
 
-Pubblicare dati consentiti, dizionario, calibrazioni, esclusioni, codice e tutti gli esiti. Ogni deviazione sarà etichettata e ogni nuova definizione di `E`, `h`, `H` o `Y` costituirà una nuova ipotesi.
+Publish permitted data, a data dictionary, calibrations, exclusions, code, and every outcome. Label every deviation. Any new definition of `E`, `h`, `H`, or `Y` constitutes a new hypothesis.

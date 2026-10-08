@@ -1,19 +1,19 @@
-# Verifica empirica esplorativa: psicologia del lavoro (pilot)
+# Exploratory empirical test: occupational psychology (pilot)
 
-**Dati reali, analisi esplorativa. Non è una validazione confermativa della formula universale.**
+**Real data, exploratory analysis. This is not confirmatory validation of a universal formula.**
 
-- Fonte: https://zenodo.org/records/21153011
-- Campione completo analizzato: 140 rispondenti
-- Ruolo del campione: pilot
-- Specifica: `H=-z(burnout)`, `E=z(job resources)`, `h=z(job demands)`
-- Trasformazioni stimate soltanto sul training
+- Source: https://zenodo.org/records/21153011
+- Complete sample analyzed: 140 respondents
+- Sample role: pilot
+- Specification: `H=-z(burnout)`, `E=z(job resources)`, `h=z(job demands)`
+- Transformations fitted on training data only
 - Split: [84, 28, 28] (training, validation, test)
-- Baseline scelta sulla validation: nonlinear
-- RMSE teoria sul test: 1.3555
-- RMSE baseline scelta sul test: 1.2267
-- Delta MSE teoria meno baseline: 0.3326
-- CI simultaneo 95% del delta: [-0.8792817398265672, 1.4234915325189854]
-- Margine preregistrato nel codice: 0.0500 unità standardizzate²
-- Esito operativo: `falsified_operationally`
+- Baseline selected on validation: nonlinear
+- Theory RMSE on test: 1.3555
+- Selected-baseline RMSE on test: 1.2267
+- Delta MSE, theory minus baseline: 0.3326
+- Simultaneous 95% interval for delta: [-0.8792817398265672, 1.4234915325189854]
+- Margin prespecified in code: 0.0500 squared standardized units
+- Operational decision: `falsified_operationally`
 
-L'esito riguarda esclusivamente l'estensione predittiva che identifica il residuo con il benessere standardizzato; la relazione centrale H:=E-h resta un'identità definitoria. La standardizzazione rende confrontabili le scale numeriche, ma non dimostra che i costrutti abbiano la stessa unità sostantiva. Il dataset è trasversale; non identifica causalità. Poiché l'ipotesi e il margine non furono preregistrati prima della raccolta dei dati, questo risultato genera una specifica da replicare prospetticamente.
+The result concerns only the predictive extension that identifies the residual with standardized well-being; the central relation H:=E-h remains a definitional identity. Standardization makes numerical scales comparable but does not prove that the constructs share a substantive unit. The dataset is cross-sectional and does not identify causality. Because the hypothesis and margin were not preregistered before collection, this result defines a specification for prospective replication.

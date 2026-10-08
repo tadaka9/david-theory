@@ -1,0 +1,25 @@
+{
+  "analysis_status": "real_data_accounting_consistency_audit",
+  "independent_validation": false,
+  "reason_not_independent": "World Bank gross savings is defined from national income and consumption plus net transfers; the three indicators share a national-accounts system.",
+  "year": 2022,
+  "retrieved_date": "2026-10-08",
+  "source": "World Bank World Development Indicators API",
+  "api": "https://api.worldbank.org/v2",
+  "indicators": {
+    "E": "NY.GNP.MKTP.CD",
+    "h": "NE.CON.TOTL.CD",
+    "H": "NY.GNS.ICTR.CD"
+  },
+  "raw_response_sha256": {
+    "E": "d2c3a99fe69237cc2df718fdc6ace92442d607f439e9a92478ec0d48dbdb7c6c",
+    "h": "390add45fb0560003983a4bf0465e9db9decf011301fffcceb34cb4d23d12813",
+    "H": "f8801f61134ad0b008523009f99d5cca169b39407e1f5dc00b48ad2cd8c57e33"
+  },
+  "n_complete_country_or_aggregate_series": 158,
+  "median_absolute_relative_discrepancy": 0.03547258362209636,
+  "p90_absolute_relative_discrepancy": 0.18363763326069446,
+  "share_within_1_percent_of_gni": 0.2974683544303797,
+  "share_within_5_percent_of_gni": 0.6012658227848101,
+  "interpretation": "The discrepancy combines net transfers, revisions, coverage differences, and aggregation effects. Agreement is database consistency, not an independent empirical confirmation of H = E - h."
+}

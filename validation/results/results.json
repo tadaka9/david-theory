@@ -1,0 +1,2345 @@
+{
+  "synthetic": true,
+  "python": "3.12.3",
+  "numpy": "2.2.6",
+  "config": {
+    "out": "results",
+    "n": 800,
+    "seed": 20261008,
+    "bootstrap": 1000,
+    "margin": 0.02,
+    "ordered": false,
+    "csv": null,
+    "metadata": null
+  },
+  "results": [
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 0.0781851883165294,
+        "additive": 0.07803460284792814,
+        "interaction": 0.07918359671078276,
+        "nonlinear": 0.07906541015166921
+      },
+      "selected_baseline_before_test": "additive",
+      "test_metrics": {
+        "theory": {
+          "mse": 0.08236924274840227,
+          "rmse": 0.28700042290631256,
+          "mae": 0.22549822483368587,
+          "r2": 0.9523270622279408
+        },
+        "additive": {
+          "mse": 0.08320781200003938,
+          "rmse": 0.2884576433378727,
+          "mae": 0.2269509854911295,
+          "r2": 0.951841722574243
+        },
+        "interaction": {
+          "mse": 0.08336518439748701,
+          "rmse": 0.2887302969857632,
+          "mae": 0.22723734657554634,
+          "r2": 0.9517506399776301
+        },
+        "nonlinear": {
+          "mse": 0.08351709082045507,
+          "rmse": 0.28899323663444976,
+          "mae": 0.22743160128298276,
+          "r2": 0.9516627209291152
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": -0.0008385692516371023,
+          "ci_simultaneous_95": [
+            -0.0023504317746791043,
+            0.0005095748012180967
+          ],
+          "reject_predictive": false
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": -0.0009959416490847434,
+          "ci_simultaneous_95": [
+            -0.002558460025510068,
+            0.0003896433804188239
+          ],
+          "reject_predictive": false
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": -0.0011478480720527918,
+          "ci_simultaneous_95": [
+            -0.0032660915263691046,
+            0.0012134774371837665
+          ],
+          "reject_predictive": false
+        }
+      },
+      "additive_coefficients": [
+        -0.026170746894954054,
+        1.0091568326426774,
+        -0.9949213295080968
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          -0.12840082354744134,
+          0.06095168249424635
+        ],
+        [
+          0.9847571500597042,
+          1.0336349696952511
+        ],
+        [
+          -1.0409702586709908,
+          -0.944108230591324
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": false,
+      "predictive_decision": "not_falsified_not_validated",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "energia",
+      "scenario": "compatible",
+      "seed": 20261008,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "59e802b4634ec68c345c808b475297814537bf65cef996c7cc5e2f40f5d9dd9f"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 0.5035097610270819,
+        "additive": 0.07066646160001049,
+        "interaction": 0.07058151424042461,
+        "nonlinear": 0.07125336869825681
+      },
+      "selected_baseline_before_test": "interaction",
+      "test_metrics": {
+        "theory": {
+          "mse": 0.5751484333205088,
+          "rmse": 0.7583854121226943,
+          "mae": 0.6013919674184958,
+          "r2": -0.11045311648737033
+        },
+        "additive": {
+          "mse": 0.09022465193019776,
+          "rmse": 0.3003741865244045,
+          "mae": 0.23447387353313323,
+          "r2": 0.8258010626205704
+        },
+        "interaction": {
+          "mse": 0.09000258600246865,
+          "rmse": 0.30000430997315464,
+          "mae": 0.23367247230239618,
+          "r2": 0.8262298107266702
+        },
+        "nonlinear": {
+          "mse": 0.08994148311331332,
+          "rmse": 0.2999024559974682,
+          "mae": 0.233058575639539,
+          "r2": 0.8263477835659548
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 0.484923781390311,
+          "ci_simultaneous_95": [
+            0.35157834721161446,
+            0.6156908848764862
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 0.48514584731804017,
+          "ci_simultaneous_95": [
+            0.3516058066079062,
+            0.616171961939428
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 0.4852069502071954,
+          "ci_simultaneous_95": [
+            0.3518138567793975,
+            0.6164064023313156
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        0.8426582921510591,
+        0.5460232052694463,
+        -0.31029977130969516
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          0.7504553541505725,
+          0.9417927202881837
+        ],
+        [
+          0.5219642402613637,
+          0.5711661971843954
+        ],
+        [
+          -0.36120164202868793,
+          -0.26361348563341597
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "energia",
+      "scenario": "additive_violation",
+      "seed": 20261009,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "07732932938f6f5e141b67aaa5770408a51a9336809e24b0c5fc422d4bb31923"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 6.604710250821294,
+        "additive": 0.31080432869385766,
+        "interaction": 0.09176345843576977,
+        "nonlinear": 0.09157072725655509
+      },
+      "selected_baseline_before_test": "nonlinear",
+      "test_metrics": {
+        "theory": {
+          "mse": 5.723430111770038,
+          "rmse": 2.39236914203683,
+          "mae": 1.8803872677519096,
+          "r2": -0.35103473798575635
+        },
+        "additive": {
+          "mse": 0.2476512728354872,
+          "rmse": 0.49764573024942876,
+          "mae": 0.3838428856841934,
+          "r2": 0.9415410923217062
+        },
+        "interaction": {
+          "mse": 0.08375703341399385,
+          "rmse": 0.2894080742031809,
+          "mae": 0.23474321032015064,
+          "r2": 0.9802288733358983
+        },
+        "nonlinear": {
+          "mse": 0.0852273292541073,
+          "rmse": 0.2919372008739333,
+          "mae": 0.2382386321931537,
+          "r2": 0.9798818051064768
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 5.47577883893455,
+          "ci_simultaneous_95": [
+            4.128726355242979,
+            6.706300925736557
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 5.6396730783560445,
+          "ci_simultaneous_95": [
+            4.310583655490274,
+            6.8768360303180724
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 5.638202782515931,
+          "ci_simultaneous_95": [
+            4.309606924619023,
+            6.874558969712825
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        -1.9784014487816544,
+        1.6471024437606308,
+        0.9963814349582374
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          -2.191300113491588,
+          -1.7817420070501915
+        ],
+        [
+          1.5948779364300185,
+          1.7023319524398839
+        ],
+        [
+          0.8838845792374722,
+          1.0953581175380749
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "energia",
+      "scenario": "interaction_violation",
+      "seed": 20261010,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "007b55d436ceee27a73159eb67300ebad3b3a61c4e72153bfdeb7708e9a278fa"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 1.8122080097104196,
+        "additive": 0.8073124705533974,
+        "interaction": 0.8254686684988617,
+        "nonlinear": 0.0950254224407455
+      },
+      "selected_baseline_before_test": "nonlinear",
+      "test_metrics": {
+        "theory": {
+          "mse": 2.175095941569677,
+          "rmse": 1.4748206472550067,
+          "mae": 1.1776902096360555,
+          "r2": 0.22307079202057245
+        },
+        "additive": {
+          "mse": 0.8843216126919458,
+          "rmse": 0.940383758202972,
+          "mae": 0.7932119908222853,
+          "r2": 0.6841264437963026
+        },
+        "interaction": {
+          "mse": 0.8894977210180999,
+          "rmse": 0.9431318683079795,
+          "mae": 0.7932524364130853,
+          "r2": 0.682277573746298
+        },
+        "nonlinear": {
+          "mse": 0.08729781440402329,
+          "rmse": 0.29546203546991157,
+          "mae": 0.23308635564147112,
+          "r2": 0.9688178252246166
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 1.2907743288777316,
+          "ci_simultaneous_95": [
+            0.9232946088058176,
+            1.6885299957162845
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 1.2855982205515777,
+          "ci_simultaneous_95": [
+            0.9204947084781506,
+            1.6836830614111675
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 2.0877981271656543,
+          "ci_simultaneous_95": [
+            1.6010882625083511,
+            2.6506542317439896
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        0.9123827358494939,
+        1.018955214102973,
+        -0.9110585227396584
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          0.5754005364723569,
+          1.221162709689274
+        ],
+        [
+          0.9267608999718348,
+          1.1161572923754994
+        ],
+        [
+          -1.0536926430048363,
+          -0.7680538408528076
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "energia",
+      "scenario": "nonlinear_violation",
+      "seed": 20261011,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "302b1b124b84efb390fa3fcc9e89de7a0452743bcb075a6c85a8c5077342f649"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 0.09233784608548802,
+        "additive": 0.09249380486475586,
+        "interaction": 0.09244267873370439,
+        "nonlinear": 0.09249986122384297
+      },
+      "selected_baseline_before_test": "interaction",
+      "test_metrics": {
+        "theory": {
+          "mse": 0.08208247112140232,
+          "rmse": 0.2865003859009658,
+          "mae": 0.22412872198934825,
+          "r2": 0.9527100120764045
+        },
+        "additive": {
+          "mse": 0.08210267845450907,
+          "rmse": 0.28653564953511296,
+          "mae": 0.22421081078804989,
+          "r2": 0.952698370071412
+        },
+        "interaction": {
+          "mse": 0.08226828147535795,
+          "rmse": 0.2868244785149237,
+          "mae": 0.22407723241936744,
+          "r2": 0.9526029615785991
+        },
+        "nonlinear": {
+          "mse": 0.08270517686994341,
+          "rmse": 0.28758507762042074,
+          "mae": 0.22491446504946824,
+          "r2": 0.9523512540257982
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": -2.020733310673724e-05,
+          "ci_simultaneous_95": [
+            -0.0006296704055735936,
+            0.0006000529701979553
+          ],
+          "reject_predictive": false
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": -0.00018581035395560372,
+          "ci_simultaneous_95": [
+            -0.0009691403522396073,
+            0.0004773729014634852
+          ],
+          "reject_predictive": false
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": -0.0006227057485410814,
+          "ci_simultaneous_95": [
+            -0.002461738679284452,
+            0.0012080596695656686
+          ],
+          "reject_predictive": false
+        }
+      },
+      "additive_coefficients": [
+        0.011370689136096951,
+        0.9968299082079551,
+        -1.0054703872099682
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          -0.08335057503289432,
+          0.10295827368433037
+        ],
+        [
+          0.9704532768949254,
+          1.0212877866274404
+        ],
+        [
+          -1.0513880755725071,
+          -0.9534691884555984
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": false,
+      "predictive_decision": "not_falsified_not_validated",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "ingegneria",
+      "scenario": "compatible",
+      "seed": 20261108,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "5d1fd8fd5c7ac68b05fc680933727528fa42edf5a34106734e7dcf1e370e0c17"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 0.5453934134955081,
+        "additive": 0.09105472636575296,
+        "interaction": 0.09106728424886677,
+        "nonlinear": 0.09192743205318829
+      },
+      "selected_baseline_before_test": "additive",
+      "test_metrics": {
+        "theory": {
+          "mse": 0.5559610179156056,
+          "rmse": 0.7456279353106384,
+          "mae": 0.6137707223664511,
+          "r2": -0.15085671716012827
+        },
+        "additive": {
+          "mse": 0.09278703253932052,
+          "rmse": 0.304609639603412,
+          "mae": 0.24330872549858293,
+          "r2": 0.8079279369917223
+        },
+        "interaction": {
+          "mse": 0.09263333091372897,
+          "rmse": 0.30435724225608457,
+          "mae": 0.24336150991746247,
+          "r2": 0.8082461041699063
+        },
+        "nonlinear": {
+          "mse": 0.09481349747338666,
+          "rmse": 0.3079180044644786,
+          "mae": 0.24705171830203604,
+          "r2": 0.803733091118889
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 0.4631739853762852,
+          "ci_simultaneous_95": [
+            0.34763965520024925,
+            0.5853404766308486
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 0.4633276870018769,
+          "ci_simultaneous_95": [
+            0.3476069557258823,
+            0.5856461764088592
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 0.4611475204422192,
+          "ci_simultaneous_95": [
+            0.34553096829550367,
+            0.5841589886833001
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        0.816303467167455,
+        0.546214976546566,
+        -0.3198467903574486
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          0.7246945502496274,
+          0.9135951924786632
+        ],
+        [
+          0.5237423534670343,
+          0.5717588145653466
+        ],
+        [
+          -0.37274921624670543,
+          -0.26710028839178196
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "ingegneria",
+      "scenario": "additive_violation",
+      "seed": 20261109,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "e0c6dbc0e17ef247fd94492d6b525cc6c2ca6a97fe85567e488550eaab7da7d9"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 5.4740874795010175,
+        "additive": 0.30048515800831055,
+        "interaction": 0.08054992429380772,
+        "nonlinear": 0.08200947818327796
+      },
+      "selected_baseline_before_test": "interaction",
+      "test_metrics": {
+        "theory": {
+          "mse": 6.285166866798468,
+          "rmse": 2.507023507428374,
+          "mae": 2.0677361498375566,
+          "r2": -0.5691746355330205
+        },
+        "additive": {
+          "mse": 0.27808060780702926,
+          "rmse": 0.5273334882283025,
+          "mae": 0.40021099571080115,
+          "r2": 0.9305735160812577
+        },
+        "interaction": {
+          "mse": 0.08111187426452492,
+          "rmse": 0.28480146464603184,
+          "mae": 0.20944014170859915,
+          "r2": 0.9797493529712332
+        },
+        "nonlinear": {
+          "mse": 0.08080889444444546,
+          "rmse": 0.28426905291368854,
+          "mae": 0.20955740262557504,
+          "r2": 0.9798249958712266
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 6.007086258991439,
+          "ci_simultaneous_95": [
+            4.740646311951628,
+            7.612978147491605
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 6.204054992533943,
+          "ci_simultaneous_95": [
+            4.925947499993564,
+            7.833224125475982
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 6.204357972354023,
+          "ci_simultaneous_95": [
+            4.926407710098348,
+            7.833690924927553
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        -1.955800169780555,
+        1.6510566012912569,
+        0.9352290471552254
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          -2.1809633017141317,
+          -1.7512481440334804
+        ],
+        [
+          1.596320252998639,
+          1.7073559774461828
+        ],
+        [
+          0.8261921796996672,
+          1.047408463387673
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "ingegneria",
+      "scenario": "interaction_violation",
+      "seed": 20261110,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "4400fee1a5681c11b53e9b9ab3428671487f845a72ce28a97685b10fc140839a"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 1.8397074390479289,
+        "additive": 0.7708580179524791,
+        "interaction": 0.779192478623215,
+        "nonlinear": 0.09630358702984028
+      },
+      "selected_baseline_before_test": "nonlinear",
+      "test_metrics": {
+        "theory": {
+          "mse": 1.7447909160949329,
+          "rmse": 1.3209053395663646,
+          "mae": 1.0751389517140608,
+          "r2": 0.12328636602180454
+        },
+        "additive": {
+          "mse": 0.6394572669914503,
+          "rmse": 0.7996607199253007,
+          "mae": 0.6678849554244898,
+          "r2": 0.6786887763190667
+        },
+        "interaction": {
+          "mse": 0.6419733060557242,
+          "rmse": 0.8012323670794411,
+          "mae": 0.6694503237078864,
+          "r2": 0.6774245298520988
+        },
+        "nonlinear": {
+          "mse": 0.08961104205956895,
+          "rmse": 0.2993510348396493,
+          "mae": 0.22368202286435884,
+          "r2": 0.9549727009672585
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 1.1053336491034826,
+          "ci_simultaneous_95": [
+            0.7867753851688896,
+            1.4654749656021115
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 1.1028176100392089,
+          "ci_simultaneous_95": [
+            0.7805943020381565,
+            1.459141740323309
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 1.655179874035364,
+          "ci_simultaneous_95": [
+            1.2676790979226598,
+            2.069415589729769
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        1.171380979021893,
+        0.9756545177370508,
+        -1.0205531050292032
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          0.8303959620941606,
+          1.4884394983422444
+        ],
+        [
+          0.882390398965145,
+          1.0695184362487034
+        ],
+        [
+          -1.1742106286995964,
+          -0.872554087731105
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "ingegneria",
+      "scenario": "nonlinear_violation",
+      "seed": 20261111,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "4da1988c007c2ee802a87afad9e2083a10631781d24616517b698bef830266e0"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 0.08750310357857662,
+        "additive": 0.08938290653569347,
+        "interaction": 0.0886912360424799,
+        "nonlinear": 0.08801592640513159
+      },
+      "selected_baseline_before_test": "nonlinear",
+      "test_metrics": {
+        "theory": {
+          "mse": 0.09000276093417076,
+          "rmse": 0.30000460152166125,
+          "mae": 0.2393313671565739,
+          "r2": 0.937800642826149
+        },
+        "additive": {
+          "mse": 0.09089862972342339,
+          "rmse": 0.3014939961648049,
+          "mae": 0.24173884997114442,
+          "r2": 0.9371815233433102
+        },
+        "interaction": {
+          "mse": 0.08969240261232311,
+          "rmse": 0.29948689889930596,
+          "mae": 0.23951135587109712,
+          "r2": 0.9380151261143517
+        },
+        "nonlinear": {
+          "mse": 0.09088504300366321,
+          "rmse": 0.30147146300050226,
+          "mae": 0.24310683223444557,
+          "r2": 0.937190912891213
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": -0.0008958687892526368,
+          "ci_simultaneous_95": [
+            -0.0024350236549964127,
+            0.0006220415412526764
+          ],
+          "reject_predictive": false
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 0.0003103583218476328,
+          "ci_simultaneous_95": [
+            -0.0022254143821532186,
+            0.0029986460392849613
+          ],
+          "reject_predictive": false
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": -0.0008822820694924582,
+          "ci_simultaneous_95": [
+            -0.004608000823001159,
+            0.0031249979098269477
+          ],
+          "reject_predictive": false
+        }
+      },
+      "additive_coefficients": [
+        0.03613857907611241,
+        0.9921466408861165,
+        -1.0003871944917864
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          -0.05341640221143633,
+          0.1164543063888146
+        ],
+        [
+          0.9694366151973091,
+          1.017942361878828
+        ],
+        [
+          -1.047896561309269,
+          -0.9513375170778402
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": false,
+      "predictive_decision": "not_falsified_not_validated",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "fisica",
+      "scenario": "compatible",
+      "seed": 20261208,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "1d3d22f7effb6cc1926afa9a6b1812b5bb8851ca07d49622d276c342be3d2aa3"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 0.5384884462697352,
+        "additive": 0.09213902889955959,
+        "interaction": 0.0929114629576154,
+        "nonlinear": 0.09316629990607007
+      },
+      "selected_baseline_before_test": "additive",
+      "test_metrics": {
+        "theory": {
+          "mse": 0.5732532575408052,
+          "rmse": 0.7571349004905303,
+          "mae": 0.6163501377483597,
+          "r2": 0.007917625717866805
+        },
+        "additive": {
+          "mse": 0.09238414793106917,
+          "rmse": 0.30394760721392294,
+          "mae": 0.2485960458802216,
+          "r2": 0.8401183357968743
+        },
+        "interaction": {
+          "mse": 0.09245311934632414,
+          "rmse": 0.30406104542726964,
+          "mae": 0.24845662998721596,
+          "r2": 0.8399989726279719
+        },
+        "nonlinear": {
+          "mse": 0.09252974670947649,
+          "rmse": 0.30418702587302515,
+          "mae": 0.2484181609778378,
+          "r2": 0.8398663599382555
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 0.48086910960973606,
+          "ci_simultaneous_95": [
+            0.35924662014670444,
+            0.6070502607006616
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 0.4808001381944811,
+          "ci_simultaneous_95": [
+            0.35945605673809145,
+            0.6069102045682074
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 0.48072351083132875,
+          "ci_simultaneous_95": [
+            0.359321690975933,
+            0.6069013456957524
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        0.8091233450093195,
+        0.5684007826029217,
+        -0.3481357197388578
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          0.7173534021499042,
+          0.9063113925911355
+        ],
+        [
+          0.5444030070892953,
+          0.5925247753009255
+        ],
+        [
+          -0.40168034118149737,
+          -0.2934930001590803
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "fisica",
+      "scenario": "additive_violation",
+      "seed": 20261209,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "c99c2abe0875d686dbd9700d4592078dc25ef66f378eb5de45a12b7dcf7ada6e"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 5.6987114995668255,
+        "additive": 0.2700605900428979,
+        "interaction": 0.08566674872871279,
+        "nonlinear": 0.08600705803221353
+      },
+      "selected_baseline_before_test": "interaction",
+      "test_metrics": {
+        "theory": {
+          "mse": 5.7890901475629875,
+          "rmse": 2.4060528147908533,
+          "mae": 1.9409084917762225,
+          "r2": -0.47348034688628604
+        },
+        "additive": {
+          "mse": 0.28718920592142083,
+          "rmse": 0.535900369398474,
+          "mae": 0.42290408281325564,
+          "r2": 0.9269025632739142
+        },
+        "interaction": {
+          "mse": 0.09853864686340523,
+          "rmse": 0.31390866006436524,
+          "mae": 0.25219506736501796,
+          "r2": 0.9749192436357003
+        },
+        "nonlinear": {
+          "mse": 0.0996373525514305,
+          "rmse": 0.31565384925806067,
+          "mae": 0.25425694904384866,
+          "r2": 0.9746395932593801
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 5.501900941641566,
+          "ci_simultaneous_95": [
+            4.243111504093656,
+            7.073057612454367
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 5.6905515006995815,
+          "ci_simultaneous_95": [
+            4.427274655567439,
+            7.320667098211271
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 5.689452795011556,
+          "ci_simultaneous_95": [
+            4.426290436738483,
+            7.319162057880474
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        -1.9391826706805686,
+        1.6351801161475281,
+        0.9613954299539442
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          -2.1396283059766943,
+          -1.7422011121328336
+        ],
+        [
+          1.5859637383243919,
+          1.6887889675366832
+        ],
+        [
+          0.8587044682031199,
+          1.0661304621787524
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "fisica",
+      "scenario": "interaction_violation",
+      "seed": 20261210,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "6c1f1842db8f2066e79cd66161cee17c8ac6083a007eddf40ff079f1a250de42"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 2.0166004302391207,
+        "additive": 0.89476740258314,
+        "interaction": 0.8898051450819716,
+        "nonlinear": 0.08782908912359103
+      },
+      "selected_baseline_before_test": "nonlinear",
+      "test_metrics": {
+        "theory": {
+          "mse": 1.9050353149428676,
+          "rmse": 1.3802301673789295,
+          "mae": 1.0877329133830376,
+          "r2": 0.3842585322683163
+        },
+        "additive": {
+          "mse": 0.7778525592358414,
+          "rmse": 0.8819594997707328,
+          "mae": 0.7581665681548044,
+          "r2": 0.748584148154184
+        },
+        "interaction": {
+          "mse": 0.7688936339332791,
+          "rmse": 0.8768658015530536,
+          "mae": 0.7553568672924389,
+          "r2": 0.7514798329595146
+        },
+        "nonlinear": {
+          "mse": 0.09357777210790105,
+          "rmse": 0.3059048415895065,
+          "mae": 0.25282137031823115,
+          "r2": 0.969753991281517
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 1.1271827557070264,
+          "ci_simultaneous_95": [
+            0.7403094774142341,
+            1.5111231928816986
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 1.1361416810095888,
+          "ci_simultaneous_95": [
+            0.749924041631379,
+            1.5267409439707138
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 1.8114575428349666,
+          "ci_simultaneous_95": [
+            1.3817911499400464,
+            2.2932672157373113
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        0.9962007970918796,
+        1.0407171930060626,
+        -0.9841813426973222
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          0.673400292287464,
+          1.3100828346383575
+        ],
+        [
+          0.9488064186475578,
+          1.1246676454637832
+        ],
+        [
+          -1.1489017682266338,
+          -0.8390880940189759
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "fisica",
+      "scenario": "nonlinear_violation",
+      "seed": 20261211,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "8e577896cf34ba4b446b07e10fb9e43bd248e88c3c314550bb46bf7e62ff7be8"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 0.09424358208618892,
+        "additive": 0.09394390098489067,
+        "interaction": 0.09386047857502074,
+        "nonlinear": 0.09486697697980413
+      },
+      "selected_baseline_before_test": "interaction",
+      "test_metrics": {
+        "theory": {
+          "mse": 0.08232144694740767,
+          "rmse": 0.2869171430002182,
+          "mae": 0.22931695378533398,
+          "r2": 0.9587074536533488
+        },
+        "additive": {
+          "mse": 0.08273312572346007,
+          "rmse": 0.2876336658380936,
+          "mae": 0.2294597375679565,
+          "r2": 0.9585009550363974
+        },
+        "interaction": {
+          "mse": 0.0817779749824871,
+          "rmse": 0.28596848599537517,
+          "mae": 0.22777703541215363,
+          "r2": 0.958980059907633
+        },
+        "nonlinear": {
+          "mse": 0.08212427350149402,
+          "rmse": 0.28657333005967955,
+          "mae": 0.22998155743013315,
+          "r2": 0.9588063561138329
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": -0.00041167877605240085,
+          "ci_simultaneous_95": [
+            -0.002199755288439368,
+            0.0014847857806097964
+          ],
+          "reject_predictive": false
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 0.0005434719649205737,
+          "ci_simultaneous_95": [
+            -0.001758116205618009,
+            0.0029366689386664166
+          ],
+          "reject_predictive": false
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 0.00019717344591364808,
+          "ci_simultaneous_95": [
+            -0.0027573382928999103,
+            0.0031882673132163954
+          ],
+          "reject_predictive": false
+        }
+      },
+      "additive_coefficients": [
+        2.524462155906003e-05,
+        0.9991179745974395,
+        -0.9829157539952228
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          -0.08634498136873622,
+          0.08956528822092846
+        ],
+        [
+          0.9747489023513373,
+          1.0228021955298965
+        ],
+        [
+          -1.0294143987041,
+          -0.93858552948205
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": false,
+      "predictive_decision": "not_falsified_not_validated",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "matematica",
+      "scenario": "compatible",
+      "seed": 20261308,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "3c1a6fa4922630a26f8fe097af5fce399774dbe2b1a7b56c87e0a1b577b099a6"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 0.5920335413324656,
+        "additive": 0.09084230675868692,
+        "interaction": 0.09045810390631309,
+        "nonlinear": 0.0914572759046292
+      },
+      "selected_baseline_before_test": "interaction",
+      "test_metrics": {
+        "theory": {
+          "mse": 0.5176520270265941,
+          "rmse": 0.719480386825516,
+          "mae": 0.580310763654316,
+          "r2": -0.05340584828021444
+        },
+        "additive": {
+          "mse": 0.1029789744492549,
+          "rmse": 0.3209033724491765,
+          "mae": 0.2496849435960306,
+          "r2": 0.7904409752670188
+        },
+        "interaction": {
+          "mse": 0.10289775187543101,
+          "rmse": 0.32077679447776614,
+          "mae": 0.25040402949150087,
+          "r2": 0.7906062606900662
+        },
+        "nonlinear": {
+          "mse": 0.10313755508018371,
+          "rmse": 0.3211503621050173,
+          "mae": 0.25147941447646216,
+          "r2": 0.7901182685928
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 0.41467305257733916,
+          "ci_simultaneous_95": [
+            0.2920740356119853,
+            0.523523547341753
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 0.41475427515116314,
+          "ci_simultaneous_95": [
+            0.2924915375806004,
+            0.522573384854545
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 0.41451447194641045,
+          "ci_simultaneous_95": [
+            0.2922761316751084,
+            0.5228165471746183
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        0.7791235742707487,
+        0.5638597628337367,
+        -0.3085406683383352
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          0.6934907151667621,
+          0.8712130777733562
+        ],
+        [
+          0.5411308397819559,
+          0.5850720058117571
+        ],
+        [
+          -0.351928577208749,
+          -0.2553143932435778
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "matematica",
+      "scenario": "additive_violation",
+      "seed": 20261309,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "10ec73b20e40ee58a70b5068ce6ef446a5f5d072f080372a4dd5e427ebb077d4"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 6.087812004902555,
+        "additive": 0.2618242160773094,
+        "interaction": 0.09503590120265494,
+        "nonlinear": 0.09614368805455711
+      },
+      "selected_baseline_before_test": "interaction",
+      "test_metrics": {
+        "theory": {
+          "mse": 6.303739744871601,
+          "rmse": 2.5107249440891772,
+          "mae": 2.0042996487499374,
+          "r2": -0.3393273896716158
+        },
+        "additive": {
+          "mse": 0.3005842486155542,
+          "rmse": 0.5482556416632247,
+          "mae": 0.4317191463409801,
+          "r2": 0.936136209080936
+        },
+        "interaction": {
+          "mse": 0.09858001571004531,
+          "rmse": 0.3139745462773142,
+          "mae": 0.2573653890220631,
+          "r2": 0.9790551449681698
+        },
+        "nonlinear": {
+          "mse": 0.09813649768728154,
+          "rmse": 0.31326745392281263,
+          "mae": 0.25709586464045353,
+          "r2": 0.9791493772588008
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 6.0031554962560465,
+          "ci_simultaneous_95": [
+            4.477665921469325,
+            7.57550655413929
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 6.205159729161556,
+          "ci_simultaneous_95": [
+            4.64317992954034,
+            7.785930966930388
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 6.205603247184318,
+          "ci_simultaneous_95": [
+            4.64335018327782,
+            7.786502387520935
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        -2.005977303147926,
+        1.6592835921030036,
+        0.9534456767758643
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          -2.186847271865413,
+          -1.825106270933848
+        ],
+        [
+          1.6063464570417423,
+          1.7069531365734874
+        ],
+        [
+          0.8519984122764431,
+          1.0532737484464807
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "matematica",
+      "scenario": "interaction_violation",
+      "seed": 20261310,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "3e981de4a5343f7ecb3e0df9bd891cb7be6734a0d66f790e26d4ce77ce0d8b61"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 2.184213451301713,
+        "additive": 0.7704401783313578,
+        "interaction": 0.757628386486811,
+        "nonlinear": 0.09951121428779955
+      },
+      "selected_baseline_before_test": "nonlinear",
+      "test_metrics": {
+        "theory": {
+          "mse": 1.9708553582673993,
+          "rmse": 1.4038715604596452,
+          "mae": 1.1344767530260573,
+          "r2": 0.21353347698084657
+        },
+        "additive": {
+          "mse": 0.7499736318363002,
+          "rmse": 0.8660101799842195,
+          "mae": 0.7486942164268974,
+          "r2": 0.7007242809006202
+        },
+        "interaction": {
+          "mse": 0.7251096114959191,
+          "rmse": 0.8515336819503496,
+          "mae": 0.7384331687683028,
+          "r2": 0.7106462264880264
+        },
+        "nonlinear": {
+          "mse": 0.09886419801368052,
+          "rmse": 0.31442677687130993,
+          "mae": 0.25205125858640176,
+          "r2": 0.9605484077069714
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 1.220881726431099,
+          "ci_simultaneous_95": [
+            0.8643855532905638,
+            1.580933824878672
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 1.24574574677148,
+          "ci_simultaneous_95": [
+            0.8847646737346478,
+            1.614492017865852
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 1.8719911602537187,
+          "ci_simultaneous_95": [
+            1.4569178014476278,
+            2.292789795479273
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        1.0556583277115674,
+        1.0484426969192637,
+        -1.0573973447891123
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          0.748781073673216,
+          1.3468052676030147
+        ],
+        [
+          0.9645187009742361,
+          1.134898779094753
+        ],
+        [
+          -1.1875311928709276,
+          -0.9052474913040397
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "matematica",
+      "scenario": "nonlinear_violation",
+      "seed": 20261311,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "d90244cebbf6e51faa64ddda73adb421ff967e825870e008b19b3a7eb3e990ae"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 0.08637113787389926,
+        "additive": 0.08675272890332382,
+        "interaction": 0.08669729387879094,
+        "nonlinear": 0.08638521861342116
+      },
+      "selected_baseline_before_test": "nonlinear",
+      "test_metrics": {
+        "theory": {
+          "mse": 0.08306028682003022,
+          "rmse": 0.2882018161289589,
+          "mae": 0.23170776027126422,
+          "r2": 0.9458782663510735
+        },
+        "additive": {
+          "mse": 0.08336904633417352,
+          "rmse": 0.28873698470090997,
+          "mae": 0.23288400007800442,
+          "r2": 0.9456770799498967
+        },
+        "interaction": {
+          "mse": 0.0827093871081368,
+          "rmse": 0.2875923975144976,
+          "mae": 0.23204034480816568,
+          "r2": 0.9461069111279178
+        },
+        "nonlinear": {
+          "mse": 0.08246034839355806,
+          "rmse": 0.2871590994441201,
+          "mae": 0.23136003924514909,
+          "r2": 0.9462691837072059
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": -0.0003087595141433179,
+          "ci_simultaneous_95": [
+            -0.002846777669118069,
+            0.0022715819125872835
+          ],
+          "reject_predictive": false
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 0.0003508997118934114,
+          "ci_simultaneous_95": [
+            -0.002360080653426828,
+            0.0033758745298324675
+          ],
+          "reject_predictive": false
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 0.0005999384264721396,
+          "ci_simultaneous_95": [
+            -0.002558121416793094,
+            0.0036100932922551936
+          ],
+          "reject_predictive": false
+        }
+      },
+      "additive_coefficients": [
+        0.06083733032888516,
+        0.9843642391361674,
+        -1.0121913655387327
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          -0.03777898990547868,
+          0.14509737360836422
+        ],
+        [
+          0.9597517240009704,
+          1.0083928926297225
+        ],
+        [
+          -1.0569200785252322,
+          -0.962899017366391
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": false,
+      "predictive_decision": "not_falsified_not_validated",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "economia",
+      "scenario": "compatible",
+      "seed": 20261408,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "8043c941015d432659b7568d1c36036987b0d43708ad7f7d1952d1f45dc2c435"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 0.4869684803277229,
+        "additive": 0.08297939836684701,
+        "interaction": 0.0824137238076527,
+        "nonlinear": 0.08267557086728537
+      },
+      "selected_baseline_before_test": "interaction",
+      "test_metrics": {
+        "theory": {
+          "mse": 0.5198681362202213,
+          "rmse": 0.7210188182150459,
+          "mae": 0.6002779959149744,
+          "r2": -0.1528040160133548
+        },
+        "additive": {
+          "mse": 0.10297683506453366,
+          "rmse": 0.3209000390534935,
+          "mae": 0.2550559750110232,
+          "r2": 0.7716495765986865
+        },
+        "interaction": {
+          "mse": 0.10272648412392138,
+          "rmse": 0.32050972547478396,
+          "mae": 0.2551836618616027,
+          "r2": 0.7722047280873869
+        },
+        "nonlinear": {
+          "mse": 0.10256094091931864,
+          "rmse": 0.32025137145579663,
+          "mae": 0.25487706112486447,
+          "r2": 0.7725718190048593
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 0.4168913011556876,
+          "ci_simultaneous_95": [
+            0.30489879237446715,
+            0.5434946759938315
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 0.41714165209629994,
+          "ci_simultaneous_95": [
+            0.3057986631258243,
+            0.5430026246150097
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 0.41730719530090266,
+          "ci_simultaneous_95": [
+            0.3060005076050029,
+            0.5431402324551344
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        0.8787649826916456,
+        0.5290891140270259,
+        -0.31250818436642136
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          0.7938947968878955,
+          0.9708300346273057
+        ],
+        [
+          0.5042445084892363,
+          0.5511363516614564
+        ],
+        [
+          -0.3577926147246232,
+          -0.26346232411963305
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "economia",
+      "scenario": "additive_violation",
+      "seed": 20261409,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "2010d8fddc74363f4e674fb1990d644c337b8070cc0fc0f9a18f0726e11faf5c"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 6.335640664090581,
+        "additive": 0.308545689470915,
+        "interaction": 0.08899466287211984,
+        "nonlinear": 0.08911860588312134
+      },
+      "selected_baseline_before_test": "interaction",
+      "test_metrics": {
+        "theory": {
+          "mse": 6.049703211471337,
+          "rmse": 2.4596144436621237,
+          "mae": 1.9488086165941845,
+          "r2": -0.3583847715052164
+        },
+        "additive": {
+          "mse": 0.30607879061960336,
+          "rmse": 0.5532438798754157,
+          "mae": 0.4419616350565807,
+          "r2": 0.9312738569935097
+        },
+        "interaction": {
+          "mse": 0.08722273470559436,
+          "rmse": 0.2953349534098434,
+          "mae": 0.2429946548931964,
+          "r2": 0.9804152318863419
+        },
+        "nonlinear": {
+          "mse": 0.08806837593732172,
+          "rmse": 0.2967631647245354,
+          "mae": 0.24492498891973574,
+          "r2": 0.9802253537830397
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 5.743624420851735,
+          "ci_simultaneous_95": [
+            4.330190345736044,
+            7.466341472949615
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 5.9624804767657436,
+          "ci_simultaneous_95": [
+            4.564690589378608,
+            7.733064978240985
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 5.961634835534017,
+          "ci_simultaneous_95": [
+            4.564329200662425,
+            7.732638518247619
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        -1.9636827813702273,
+        1.6428596765774737,
+        0.9732443087392233
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          -2.1872973932984086,
+          -1.7746846473837985
+        ],
+        [
+          1.5889969474777657,
+          1.699094667704485
+        ],
+        [
+          0.877149644231216,
+          1.0870669076486177
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "economia",
+      "scenario": "interaction_violation",
+      "seed": 20261410,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "a06dc19a8ec0d5881454e2b7218df7272bcfc4fc1da02edc921f809d03dda199"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 1.6646254141775167,
+        "additive": 0.6902255634594001,
+        "interaction": 0.6891192702458554,
+        "nonlinear": 0.07713501103288325
+      },
+      "selected_baseline_before_test": "nonlinear",
+      "test_metrics": {
+        "theory": {
+          "mse": 2.0514440299323873,
+          "rmse": 1.4322862946814743,
+          "mae": 1.1295351646483514,
+          "r2": 0.057313363754947444
+        },
+        "additive": {
+          "mse": 0.8272185958079765,
+          "rmse": 0.909515583048458,
+          "mae": 0.7529274523225113,
+          "r2": 0.6198736577047737
+        },
+        "interaction": {
+          "mse": 0.8123661698275046,
+          "rmse": 0.9013135801858888,
+          "mae": 0.7491908011623448,
+          "r2": 0.6266986957186409
+        },
+        "nonlinear": {
+          "mse": 0.08367969257626429,
+          "rmse": 0.2892744243383163,
+          "mae": 0.23629781525107435,
+          "r2": 0.9615472190487505
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 1.2242254341244105,
+          "ci_simultaneous_95": [
+            0.8691121772625744,
+            1.5843988929831614
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 1.2390778601048822,
+          "ci_simultaneous_95": [
+            0.8715532452956033,
+            1.6115837277405891
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 1.967764337356123,
+          "ci_simultaneous_95": [
+            1.458112081477776,
+            2.4673857106152086
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        1.002820274063297,
+        0.9928705794349925,
+        -0.8993242514939515
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          0.6473786582167799,
+          1.3063816318808874
+        ],
+        [
+          0.9017498739271247,
+          1.0942837161042165
+        ],
+        [
+          -1.0501802245103369,
+          -0.7678691525779796
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "economia",
+      "scenario": "nonlinear_violation",
+      "seed": 20261411,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "14f85976b0d8589636cfef4b8b833d04b4c93514271a84e2d6e8b7e67c2f0978"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 0.11655072696348061,
+        "additive": 0.11743558599061954,
+        "interaction": 0.11704476839485065,
+        "nonlinear": 0.11780143993937937
+      },
+      "selected_baseline_before_test": "interaction",
+      "test_metrics": {
+        "theory": {
+          "mse": 0.08661878797678946,
+          "rmse": 0.29431069973208496,
+          "mae": 0.23292679596615073,
+          "r2": 0.9504469666713736
+        },
+        "additive": {
+          "mse": 0.08951893671299825,
+          "rmse": 0.2991971535843853,
+          "mae": 0.2361237428548936,
+          "r2": 0.9487878443222842
+        },
+        "interaction": {
+          "mse": 0.08932909084139276,
+          "rmse": 0.2988797263806844,
+          "mae": 0.23442146616984552,
+          "r2": 0.948896451692841
+        },
+        "nonlinear": {
+          "mse": 0.08998699514502642,
+          "rmse": 0.29997832445866224,
+          "mae": 0.2350856328196005,
+          "r2": 0.9485200766055591
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": -0.002900148736208796,
+          "ci_simultaneous_95": [
+            -0.005709131634526399,
+            -0.0004262318638513033
+          ],
+          "reject_predictive": false
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": -0.002710302864603294,
+          "ci_simultaneous_95": [
+            -0.005791782535929956,
+            0.00020614556508253653
+          ],
+          "reject_predictive": false
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": -0.003368207168236956,
+          "ci_simultaneous_95": [
+            -0.007004501416527584,
+            3.721264546921637e-05
+          ],
+          "reject_predictive": false
+        }
+      },
+      "additive_coefficients": [
+        -0.0294183583006164,
+        1.0080312575034456,
+        -0.9765217146807894
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          -0.12606345646824582,
+          0.05744034847671998
+        ],
+        [
+          0.9837027501945678,
+          1.0326266540278934
+        ],
+        [
+          -1.0286227031231616,
+          -0.9250252238764464
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": false,
+      "predictive_decision": "not_falsified_not_validated",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "psicologia",
+      "scenario": "compatible",
+      "seed": 20261508,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "9c2d84c6a733bef2192f267399f311648a5b444a942fc111fbbaab7dc81b7d99"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 0.501694592267809,
+        "additive": 0.09347076016195859,
+        "interaction": 0.09262643699574152,
+        "nonlinear": 0.09250129030208701
+      },
+      "selected_baseline_before_test": "nonlinear",
+      "test_metrics": {
+        "theory": {
+          "mse": 0.42371974027894427,
+          "rmse": 0.6509375855479113,
+          "mae": 0.5227496157604063,
+          "r2": 0.11863862309040474
+        },
+        "additive": {
+          "mse": 0.07579411731996433,
+          "rmse": 0.2753073143234017,
+          "mae": 0.21892138642503864,
+          "r2": 0.8423438861762874
+        },
+        "interaction": {
+          "mse": 0.07624187915432543,
+          "rmse": 0.2761193205017089,
+          "mae": 0.21911685013075605,
+          "r2": 0.8414125158639195
+        },
+        "nonlinear": {
+          "mse": 0.07721382356586436,
+          "rmse": 0.27787375472661024,
+          "mae": 0.22028497375519054,
+          "r2": 0.8393908157083648
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 0.34792562295898,
+          "ci_simultaneous_95": [
+            0.23660505508160265,
+            0.460907027793483
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 0.34747786112461887,
+          "ci_simultaneous_95": [
+            0.23693348769666842,
+            0.4601719284746998
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 0.34650591671307995,
+          "ci_simultaneous_95": [
+            0.2368085967766115,
+            0.45874017210722207
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        0.824211447850103,
+        0.539066098302796,
+        -0.28385882334341295
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          0.718154723847323,
+          0.9183157976456902
+        ],
+        [
+          0.5146550722867237,
+          0.5635896087829334
+        ],
+        [
+          -0.33180479075278446,
+          -0.2313096796541076
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "psicologia",
+      "scenario": "additive_violation",
+      "seed": 20261509,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "772fe37966b153864ac25cb84b1129c1b5027cc90e75f25452ca8c0cb6026b30"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 5.3671528852842485,
+        "additive": 0.3188527576323391,
+        "interaction": 0.08541108034968495,
+        "nonlinear": 0.08743190892970967
+      },
+      "selected_baseline_before_test": "interaction",
+      "test_metrics": {
+        "theory": {
+          "mse": 7.089362348245632,
+          "rmse": 2.6625856508750347,
+          "mae": 2.155476401156705,
+          "r2": -0.3205762506967076
+        },
+        "additive": {
+          "mse": 0.32968974972820597,
+          "rmse": 0.5741861629543209,
+          "mae": 0.4527037405051762,
+          "r2": 0.938586796357369
+        },
+        "interaction": {
+          "mse": 0.11694149022527581,
+          "rmse": 0.3419670893891338,
+          "mae": 0.2683248883492144,
+          "r2": 0.9782166368247779
+        },
+        "nonlinear": {
+          "mse": 0.11709772441084403,
+          "rmse": 0.3421954476769731,
+          "mae": 0.26827853186185846,
+          "r2": 0.9781875341855173
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 6.759672598517426,
+          "ci_simultaneous_95": [
+            5.0810404965702,
+            8.345048602899311
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 6.972420858020355,
+          "ci_simultaneous_95": [
+            5.334927173341717,
+            8.571553494001432
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 6.9722646238347865,
+          "ci_simultaneous_95": [
+            5.33493210559295,
+            8.57163865040925
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        -1.9449312251853283,
+        1.6545810016139648,
+        0.9505372603281463
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          -2.1499874052765984,
+          -1.7409976534931562
+        ],
+        [
+          1.5993851151327785,
+          1.705263087834135
+        ],
+        [
+          0.8307922959553999,
+          1.0627718994267807
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "psicologia",
+      "scenario": "interaction_violation",
+      "seed": 20261510,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "534f9a15477734996bd0992243ff6c6af8f243e09caa096ef943c42739947877"
+    },
+    {
+      "n": 800,
+      "split_sizes": [
+        480,
+        160,
+        160
+      ],
+      "validation_mse": {
+        "theory": 1.8031822434490643,
+        "additive": 0.7521478362580434,
+        "interaction": 0.7545785751195905,
+        "nonlinear": 0.0984575209275868
+      },
+      "selected_baseline_before_test": "nonlinear",
+      "test_metrics": {
+        "theory": {
+          "mse": 2.1144581798976043,
+          "rmse": 1.4541176637045587,
+          "mae": 1.164139428609068,
+          "r2": 0.26237666610612465
+        },
+        "additive": {
+          "mse": 0.8102592121617593,
+          "rmse": 0.9001439952372949,
+          "mae": 0.7384955470238073,
+          "r2": 0.7173431439434169
+        },
+        "interaction": {
+          "mse": 0.8101405760871533,
+          "rmse": 0.9000780944380067,
+          "mae": 0.7394151291919444,
+          "r2": 0.7173845298349437
+        },
+        "nonlinear": {
+          "mse": 0.09226010082864437,
+          "rmse": 0.30374347866027407,
+          "mae": 0.22905088542605512,
+          "r2": 0.967815299538388
+        }
+      },
+      "comparisons": {
+        "additive": {
+          "delta_mse_theory_minus_baseline": 1.3041989677358452,
+          "ci_simultaneous_95": [
+            0.9773074208873234,
+            1.6244644619185906
+          ],
+          "reject_predictive": true
+        },
+        "interaction": {
+          "delta_mse_theory_minus_baseline": 1.3043176038104511,
+          "ci_simultaneous_95": [
+            0.9759721536434669,
+            1.6210950254837166
+          ],
+          "reject_predictive": true
+        },
+        "nonlinear": {
+          "delta_mse_theory_minus_baseline": 2.02219807906896,
+          "ci_simultaneous_95": [
+            1.5547174895470635,
+            2.495697210394506
+          ],
+          "reject_predictive": true
+        }
+      },
+      "additive_coefficients": [
+        0.8788830374695686,
+        1.0132317716184138,
+        -0.9346788860693337
+      ],
+      "coefficient_ci_simultaneous_95": [
+        [
+          0.555895207822342,
+          1.2153581186808184
+        ],
+        [
+          0.9148252158051302,
+          1.1026679310299154
+        ],
+        [
+          -1.0754723510645545,
+          -0.794891093860186
+        ]
+      ],
+      "reject_additive_restrictions_diagnostic": true,
+      "predictive_decision": "falsified_operationally",
+      "margin_mse": 0.02,
+      "bootstrap": 1000,
+      "sector": "psicologia",
+      "scenario": "nonlinear_violation",
+      "seed": 20261511,
+      "metadata": {
+        "synthetic": true
+      },
+      "data_sha256": "bb50587d1dad6f642982aed93983cebfea47c7af9d73234f3ca118ac58bc52f7"
+    }
+  ]
+}

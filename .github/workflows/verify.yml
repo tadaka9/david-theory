@@ -1,0 +1,23 @@
+name: Reproduce synthetic experiment
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  verify:
+    defaults:
+      run:
+        working-directory: validation
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python experiment.py --out reproduced --n 800 --seed 20261008 --bootstrap 1000 --margin 0.02
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reproduction-${{ matrix.os }}
+          path: validation/reproduced/

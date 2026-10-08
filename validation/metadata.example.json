@@ -1,0 +1,10 @@
+{
+  "sector": "economia",
+  "source": "SOSTITUIRE: fonte, licenza, periodo e protocollo",
+  "unit": "SOSTITUIRE: stessa unità per E, h e H",
+  "H_definition": "SOSTITUIRE: esito osservato indipendentemente",
+  "E_definition": "SOSTITUIRE: risorsa iniziale",
+  "h_definition": "SOSTITUIRE: perdita o vincolo misurato",
+  "independent_H": false,
+  "sampling": "SOSTITUIRE: iid solo se giustificato"
+}

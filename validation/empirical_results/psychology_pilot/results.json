@@ -1,0 +1,131 @@
+{
+  "analysis_status": "exploratory_real_data_falsification",
+  "confirmatory_validation": false,
+  "reason_not_confirmatory": "The operationalization was created for this project after the source data already existed; scales differ before standardization; cross-sectional associations do not establish causality or universality.",
+  "source_record": "https://zenodo.org/records/21153011",
+  "download_url": "https://zenodo.org/api/records/21153011/files/metro_burnout_repository_package.zip/content",
+  "archive_sha256": "fe33873b7b6a847203edd5d70101f60fb9529c693ec252f10fdfbce2bfe6bec0",
+  "retrieved_date": "2026-10-08",
+  "dataset": "De-identified survey data for job demands, job resources, and burnout among metro site management personnel in China",
+  "sheet": "Pilot_Survey_n140",
+  "sample_role": "pilot",
+  "n_complete": 140,
+  "operationalization": {
+    "training_means": [
+      2.8662202380952384,
+      3.3339285714285722,
+      4.368386243386243
+    ],
+    "training_standard_deviations": [
+      0.43524196066512366,
+      0.5002639626434779,
+      0.6718772147225281
+    ],
+    "columns_before_transform": [
+      "工作资源",
+      "工作要求",
+      "职业倦怠"
+    ],
+    "columns_after_transform": [
+      "E=z(job_resources)",
+      "h=z(job_demands)",
+      "H=-z(burnout)"
+    ]
+  },
+  "hypothesis": "-z(burnout) = z(job resources) - z(job demands)",
+  "margin_mse_standardized_squared": 0.05,
+  "result": {
+    "n": 140,
+    "split_sizes": [
+      84,
+      28,
+      28
+    ],
+    "validation_mse": {
+      "theory": 1.991777842679697,
+      "additive": 0.9952232512195955,
+      "interaction": 1.0174704319011065,
+      "nonlinear": 0.7149545134247484
+    },
+    "selected_baseline_before_test": "nonlinear",
+    "test_metrics": {
+      "theory": {
+        "mse": 1.8373933199027612,
+        "rmse": 1.3555048210547838,
+        "mae": 1.0909125409650766,
+        "r2": -0.4565372368440015
+      },
+      "additive": {
+        "mse": 0.8333344192117643,
+        "rmse": 0.9128715239351944,
+        "mae": 0.6554273729447614,
+        "r2": 0.33939968150643984
+      },
+      "interaction": {
+        "mse": 0.8274591302292393,
+        "rmse": 0.9096478055979904,
+        "mae": 0.6571963506943782,
+        "r2": 0.34405713676524086
+      },
+      "nonlinear": {
+        "mse": 1.5047665932412622,
+        "rmse": 1.2266892814569068,
+        "mae": 0.8687326189945941,
+        "r2": -0.19285759454637685
+      }
+    },
+    "comparisons": {
+      "additive": {
+        "delta_mse_theory_minus_baseline": 1.0040589006909975,
+        "ci_simultaneous_95": [
+          0.14297117364465398,
+          1.9468865173693908
+        ],
+        "reject_predictive": true
+      },
+      "interaction": {
+        "delta_mse_theory_minus_baseline": 1.009934189673522,
+        "ci_simultaneous_95": [
+          0.14838518623290606,
+          1.9540589205443575
+        ],
+        "reject_predictive": true
+      },
+      "nonlinear": {
+        "delta_mse_theory_minus_baseline": 0.3326267266614993,
+        "ci_simultaneous_95": [
+          -0.8792817398265672,
+          1.4234915325189854
+        ],
+        "reject_predictive": false
+      }
+    },
+    "additive_coefficients": [
+      -0.07309101502481444,
+      0.03799976183912557,
+      -0.5114160458795817
+    ],
+    "coefficient_ci_simultaneous_95": [
+      [
+        -0.2869454700018388,
+        0.13471749773314667
+      ],
+      [
+        -0.21870425827887266,
+        0.28004550082258595
+      ],
+      [
+        -0.8010621458140558,
+        -0.19598566418981503
+      ]
+    ],
+    "reject_additive_restrictions_diagnostic": true,
+    "predictive_decision": "falsified_operationally",
+    "margin_mse": 0.05,
+    "bootstrap": 10000
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.2.6"
+  }
+}

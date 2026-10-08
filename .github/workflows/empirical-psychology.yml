@@ -1,0 +1,37 @@
+name: Reproduce real-data analyses
+
+on:
+  workflow_dispatch:
+
+jobs:
+  empirical-psychology:
+    defaults:
+      run:
+        working-directory: validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: >-
+          python empirical_psychology.py
+          --out reproduced-empirical/psychology
+          --bootstrap 10000
+          --margin 0.05
+      - run: >-
+          python empirical_psychology.py
+          --sample pilot
+          --out reproduced-empirical/psychology_pilot
+          --bootstrap 10000
+          --margin 0.05
+      - run: >-
+          python empirical_economy.py
+          --year 2022
+          --out reproduced-empirical/economy
+      - uses: actions/upload-artifact@v4
+        with:
+          name: empirical-reproduction
+          path: validation/reproduced-empirical/

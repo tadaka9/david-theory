@@ -1,22 +1,22 @@
 ---
-name: Replica o confutazione
-about: Documentare risultati verificabili, distinguendo simulazione e dati reali
+name: Replication or falsification
+about: Document verifiable results while distinguishing simulations from real data
 ---
 
-## Tipo
-Replica sintetica / esperimento reale / contributo matematico
+## Type
+Synthetic replication / real experiment / mathematical contribution
 
-## Ambiente e versione
-Commit, sistema operativo, Python, NumPy:
+## Environment and version
+Commit, operating system, Python, and NumPy:
 
-## Protocollo e dati
-Preregistrazione, definizioni, unità, provenienza e diritti:
+## Protocol and data
+Preregistration, definitions, units, provenance, and rights:
 
-## Esecuzione
-Comandi, seed, configurazione e modifiche:
+## Execution
+Commands, seed, configuration, and modifications:
 
-## Risultati completi
-Allegare report/JSON e includere risultati negativi:
+## Complete results
+Attach reports/JSON and include negative results:
 
-## Interpretazione e limiti
-Quale specifica ipotesi è supportata o confutata? Quali alternative restano?
+## Interpretation and limitations
+Which specific hypothesis is supported or falsified? Which alternatives remain?

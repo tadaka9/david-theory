@@ -1,40 +1,40 @@
-# Risultati H = E − h
+# H = E - h results
 
-DATI SINTETICI: verifica del metodo, nessuna validazione empirica reale.
+SYNTHETIC DATA: method verification only; no real empirical validation.
 
-| Settore | Scenario | RMSE teoria | RMSE baseline scelta | Esito operativo |
+| Field | Scenario | Theory RMSE | Selected-baseline RMSE | Operational decision |
 |---|---|---:|---:|---|
-| energia | compatible | 0.2870 | 0.2885 | not_falsified_not_validated |
-| energia | additive_violation | 0.7584 | 0.3000 | falsified_operationally |
-| energia | interaction_violation | 2.3924 | 0.2919 | falsified_operationally |
-| energia | nonlinear_violation | 1.4748 | 0.2955 | falsified_operationally |
-| ingegneria | compatible | 0.2865 | 0.2868 | not_falsified_not_validated |
-| ingegneria | additive_violation | 0.7456 | 0.3046 | falsified_operationally |
-| ingegneria | interaction_violation | 2.5070 | 0.2848 | falsified_operationally |
-| ingegneria | nonlinear_violation | 1.3209 | 0.2994 | falsified_operationally |
-| fisica | compatible | 0.3000 | 0.3015 | not_falsified_not_validated |
-| fisica | additive_violation | 0.7571 | 0.3039 | falsified_operationally |
-| fisica | interaction_violation | 2.4061 | 0.3139 | falsified_operationally |
-| fisica | nonlinear_violation | 1.3802 | 0.3059 | falsified_operationally |
-| matematica | compatible | 0.2869 | 0.2860 | not_falsified_not_validated |
-| matematica | additive_violation | 0.7195 | 0.3208 | falsified_operationally |
-| matematica | interaction_violation | 2.5107 | 0.3140 | falsified_operationally |
-| matematica | nonlinear_violation | 1.4039 | 0.3144 | falsified_operationally |
-| economia | compatible | 0.2882 | 0.2872 | not_falsified_not_validated |
-| economia | additive_violation | 0.7210 | 0.3205 | falsified_operationally |
-| economia | interaction_violation | 2.4596 | 0.2953 | falsified_operationally |
-| economia | nonlinear_violation | 1.4323 | 0.2893 | falsified_operationally |
-| psicologia | compatible | 0.2943 | 0.2989 | not_falsified_not_validated |
-| psicologia | additive_violation | 0.6509 | 0.2779 | falsified_operationally |
-| psicologia | interaction_violation | 2.6626 | 0.3420 | falsified_operationally |
-| psicologia | nonlinear_violation | 1.4541 | 0.3037 | falsified_operationally |
+| energy | compatible | 0.2870 | 0.2885 | not_falsified_not_validated |
+| energy | additive_violation | 0.7584 | 0.3000 | falsified_operationally |
+| energy | interaction_violation | 2.3924 | 0.2919 | falsified_operationally |
+| energy | nonlinear_violation | 1.4748 | 0.2955 | falsified_operationally |
+| engineering | compatible | 0.2865 | 0.2868 | not_falsified_not_validated |
+| engineering | additive_violation | 0.7456 | 0.3046 | falsified_operationally |
+| engineering | interaction_violation | 2.5070 | 0.2848 | falsified_operationally |
+| engineering | nonlinear_violation | 1.3209 | 0.2994 | falsified_operationally |
+| physics | compatible | 0.3000 | 0.3015 | not_falsified_not_validated |
+| physics | additive_violation | 0.7571 | 0.3039 | falsified_operationally |
+| physics | interaction_violation | 2.4061 | 0.3139 | falsified_operationally |
+| physics | nonlinear_violation | 1.3802 | 0.3059 | falsified_operationally |
+| mathematics | compatible | 0.2869 | 0.2860 | not_falsified_not_validated |
+| mathematics | additive_violation | 0.7195 | 0.3208 | falsified_operationally |
+| mathematics | interaction_violation | 2.5107 | 0.3140 | falsified_operationally |
+| mathematics | nonlinear_violation | 1.4039 | 0.3144 | falsified_operationally |
+| economics | compatible | 0.2882 | 0.2872 | not_falsified_not_validated |
+| economics | additive_violation | 0.7210 | 0.3205 | falsified_operationally |
+| economics | interaction_violation | 2.4596 | 0.2953 | falsified_operationally |
+| economics | nonlinear_violation | 1.4323 | 0.2893 | falsified_operationally |
+| psychology | compatible | 0.2943 | 0.2989 | not_falsified_not_validated |
+| psychology | additive_violation | 0.6509 | 0.2779 | falsified_operationally |
+| psychology | interaction_violation | 2.6626 | 0.3420 | falsified_operationally |
+| psychology | nonlinear_violation | 1.4541 | 0.3037 | falsified_operationally |
 
-## Interpretazione
+## Interpretation
 
-La mancata falsificazione non prova la formula. Ogni scenario compatibile è generato dalla formula stessa: il successo è un controllo positivo del software.
-Delta MSE positivo favorisce la baseline. Falsificazione operativa: limite inferiore del CI maggiore del margine MSE prefissato. Il CI nominale simultaneo 95% usa Bonferroni sui tre confronti all’interno di ogni caso; non corregge globalmente i 24 casi.
-Bootstrap percentile iid del test: incertezza condizionata ai modelli stimati, non include la variabilità di training. Bootstrap delle righe di sviluppo: CI dei coefficienti additivi, diagnostico e non prova di equivalenza.
-Restrizioni additive: intercetta 0, coefficiente E 1, coefficiente h −1. Se il modello additivo è mal specificato, il loro rigetto non costituisce da solo una falsificazione strutturale.
-Modello nonlineare: polinomio quadratico, non rappresenta tutte le alternative nonlineari. Nessuna inferenza causale. Un solo split non dimostra robustezza rispetto al campionamento.
-Le sei etichette settoriali usano lo stesso banco di prova astratto con semi diversi: non sono sei esperimenti disciplinari reali. In matematica i risultati numerici non sostituiscono una dimostrazione.
-Dettagli, intervalli e configurazione: results.json. Indici dello split e previsioni: case_*/audit.json.
+Failure to falsify does not prove the formula. Each compatible scenario is generated from the formula itself and serves as a software positive control.
+Positive delta MSE favors the baseline. Operational falsification requires the lower confidence bound to exceed the prespecified MSE margin. The nominal simultaneous 95% interval uses Bonferroni correction across three within-case comparisons and does not globally correct all 24 cases.
+The iid percentile bootstrap on test rows is conditional on fitted models and excludes training variability. The development-row coefficient bootstrap is diagnostic and not evidence of equivalence.
+Additive restrictions are intercept 0, E coefficient 1, and h coefficient -1. If the additive model is misspecified, rejecting these restrictions alone is not structural falsification.
+The nonlinear model is quadratic and does not represent every nonlinear alternative. No causal inference is made. A single split does not establish sampling robustness.
+The six field labels use the same abstract harness with different seeds; they are not six real disciplinary experiments. Numerical results do not replace proof in mathematics.
+See results.json for details, intervals, and configuration; see case_*/audit.json for split indices and predictions.

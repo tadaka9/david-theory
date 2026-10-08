@@ -31,7 +31,7 @@ def fetch_json(url: str, timeout: float) -> tuple[object, str]:
 
 def values_by_country(payload: object) -> dict[str, dict]:
     if not isinstance(payload, list) or len(payload) < 2 or not isinstance(payload[1], list):
-        raise ValueError("Risposta World Bank inattesa")
+        raise ValueError("Unexpected World Bank response")
     return {
         row["countryiso3code"]: row
         for row in payload[1]
@@ -76,7 +76,7 @@ def run(args: argparse.Namespace) -> dict:
         payloads[key], hashes[key] = fetch_json(url, args.timeout)
     rows = join_indicators(payloads)
     if len(rows) < 80:
-        raise ValueError(f"Solo {len(rows)} osservazioni complete; audit non eseguito")
+        raise ValueError(f"Only {len(rows)} complete observations; audit not performed")
     absolute_relative = sorted(abs(row["relative_discrepancy_to_abs_E"]) for row in rows)
     p90_index = min(len(absolute_relative) - 1, int(0.90 * len(absolute_relative)))
     summary = {
@@ -111,20 +111,20 @@ def run(args: argparse.Namespace) -> dict:
     (args.out / "results.json").write_text(
         json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8"
     )
-    report = f"""# Audit empirico economico: contabilità nazionale {args.year}
+    report = f"""# Empirical economics audit: national accounts {args.year}
 
-**Dati reali World Bank. Audit di coerenza contabile, non validazione indipendente.**
+**Real World Bank data. Accounting consistency audit, not independent validation.**
 
-- Serie complete congiunte: {len(rows)}
+- Complete joined series: {len(rows)}
 - E: GNI (current US$), `{INDICATORS['E']}`
 - h: final consumption expenditure (current US$), `{INDICATORS['h']}`
 - H: gross savings (current US$), `{INDICATORS['H']}`
-- Mediana di `|H-(E-h)|/|E|`: {summary['median_absolute_relative_discrepancy']:.4%}
-- 90° percentile: {summary['p90_absolute_relative_discrepancy']:.4%}
-- Quota entro 1% del GNI: {summary['share_within_1_percent_of_gni']:.2%}
-- Quota entro 5% del GNI: {summary['share_within_5_percent_of_gni']:.2%}
+- Median `|H-(E-h)|/|E|`: {summary['median_absolute_relative_discrepancy']:.4%}
+- 90th percentile: {summary['p90_absolute_relative_discrepancy']:.4%}
+- Share within 1% of GNI: {summary['share_within_1_percent_of_gni']:.2%}
+- Share within 5% of GNI: {summary['share_within_5_percent_of_gni']:.2%}
 
-La definizione World Bank specifica che il risparmio lordo è reddito nazionale lordo meno consumo totale **più trasferimenti netti**. La formula ridotta omette quindi un termine noto. Inoltre le serie provengono dallo stesso sistema di contabilità nazionale. Una corrispondenza misura coerenza del database; una discrepanza può rappresentare trasferimenti netti, revisioni, differenze di copertura o aggregati sovranazionali. Non è un test causale né una conferma indipendente della teoria percettiva.
+World Bank metadata defines gross savings as gross national income minus total consumption **plus net transfers**. The reduced formula therefore omits a known term. The series also come from the same national-accounts system. Agreement measures database consistency; a discrepancy may represent net transfers, revisions, coverage differences, or supranational aggregates. This is neither a causal test nor independent confirmation of the perceptual theory.
 """
     (args.out / "REPORT.md").write_text(report, encoding="utf-8")
     return summary
@@ -142,4 +142,4 @@ if __name__ == "__main__":
     try:
         run(parser().parse_args())
     except (OSError, ValueError, json.JSONDecodeError) as exc:
-        raise SystemExit(f"Errore: {exc}") from exc
+        raise SystemExit(f"Error: {exc}") from exc

@@ -1,7 +1,7 @@
-# Replica e verifica indipendente
+# Replication and independent verification
 
-Aprire una issue per segnalare una replica, una confutazione o un protocollo. Riportare commit del progetto, sistema operativo, Python/NumPy, comando, seed, risultati completi e differenze dal protocollo. Allegare dati redistribuibili o una procedura autorizzata per recuperarli. Una replica sintetica verifica il software; non prova la formula nel mondo reale.
+Open an issue to report a replication, falsification, or protocol. Include the project commit, operating system, Python and NumPy versions, command, seed, complete results, and deviations from the protocol. Attach redistributable data or an authorized retrieval procedure. A synthetic replication verifies the software; it does not prove the formula in the real world.
 
-Per esperimenti reali compilare PREREGISTRATION.md prima della raccolta o dell’accesso ai dati di conferma; fare una pull request con il protocollo. Conferma indipendente significa dati e misure indipendenti, non solo riesecuzione dello stesso script. Conservare fallimenti, risultati nulli e modifiche. I contributi matematici devono contenere un enunciato preciso e una dimostrazione o un controesempio con ipotesi esplicite.
+For real experiments, complete `PREREGISTRATION.md` before data collection or access to confirmatory data, then submit the protocol as a pull request. Independent confirmation requires independent data and measurements, not merely rerunning the same script. Preserve failures, null results, and protocol changes. Mathematical contributions must contain a precise statement and either a proof or a counterexample with explicit assumptions.
 
-Non caricare credenziali, dati personali o dati privi di autorizzazione alla redistribuzione. La licenza del codice e del paper deve essere scelta dal titolare prima di sollecitare riuso pubblico; questo pacchetto non attribuisce automaticamente una licenza.
+Do not upload credentials, personal data, or data without redistribution authorization. The rights holder must select licenses for code and papers before inviting public reuse; this package does not automatically grant an additional license.

@@ -1,32 +1,32 @@
-# Protocollo prospettico di laboratorio
+# Prospective laboratory protocol
 
-Questo documento prepara esperimenti futuri; nessun esperimento fisico è stato eseguito in questo progetto.
+This document prepares future experiments; no physical experiment has been performed in this project.
 
-## Esperimento A: bilancio energetico di un motore elettrico
+## Experiment A: electric-motor energy balance
 
-Obiettivo: verificare se un bilancio con misure indipendenti è compatibile con `H=E-h` entro l'incertezza, e identificare termini omessi.
+Objective: determine whether a balance based on independent measurements is compatible with `H=E-h` within uncertainty and identify omitted terms.
 
-- `E`: energia elettrica in ingresso, integrale temporale della potenza misurata con analizzatore calibrato, joule.
-- `H`: lavoro meccanico all'albero, integrale di coppia per velocità angolare misurate da dinamometro e tachimetro, joule.
-- `h`: calore disperso nel motore e nell'elettronica misurato calorimetricamente, più energia meccanica dissipata misurata con una prova di coast-down, joule.
-- Termine di accumulo: variazione di energia cinetica e termica fra inizio e fine prova. Deve essere misurato o reso trascurabile con regime stazionario.
+- `E`: electrical input energy, the time integral of power measured by a calibrated analyzer, in joules.
+- `H`: shaft mechanical work, the integral of torque times angular velocity measured by a dynamometer and tachometer, in joules.
+- `h`: heat dissipated by the motor and electronics measured calorimetrically, plus mechanical dissipation measured with a coast-down test, in joules.
+- Storage term: change in kinetic and thermal energy between the beginning and end of the trial. Measure it or make it negligible under steady-state operation.
 
-Disegno: almeno 30 ripetizioni per ciascuno di cinque livelli di carico scelti prima della raccolta; ordine casuale; strumenti azzerati prima di ogni blocco; tecnico che calcola `H` senza vedere `E-h`. Conservare letture grezze, certificati di calibrazione, temperatura ambiente e timestamp.
+Design: at least 30 repetitions at each of five load levels selected before collection; randomized order; instruments zeroed before each block; technician calculating `H` without seeing `E-h`. Retain raw readings, calibration certificates, ambient temperature, and timestamps.
 
-Esito primario: `r = H-(E-h)`. La relazione è compatibile soltanto se l'intervallo di equivalenza preregistrato contiene l'intero intervallo di confidenza di `r` e se non emerge una dipendenza sistematica dal carico. L'intervallo deve derivare dal budget di incertezza degli strumenti, non dai risultati osservati.
+Primary outcome: `r = H-(E-h)`. The relation is compatible only if the preregistered equivalence interval contains the entire confidence interval for `r` and no systematic load dependence appears. The interval must come from the instrument uncertainty budget, not from observed results.
 
-Questo stesso banco copre energia, fisica applicata e ingegneria, ma non tre repliche indipendenti: per ciascun campo servono laboratori, operatori e strumenti separati.
+The same test bench covers energy, applied physics, and engineering, but it does not constitute three independent replications. Separate laboratories, operators, and instruments are required for each field.
 
-## Esperimento B: processo ingegneristico discreto
+## Experiment B: discrete engineering process
 
-- `E`: numero di unità entrate in una fase produttiva.
-- `h`: scarti osservati e classificati da un sistema indipendente.
-- `H`: unità conformi contate a valle da un secondo sistema.
+- `E`: number of units entering a production stage.
+- `h`: rejected units observed and classified by an independent system.
+- `H`: conforming units counted downstream by a second system.
 
-Registrare anche rilavorazioni, inventario iniziale/finale e unità non classificate. Se `H` viene calcolato sottraendo `h` da `E`, il test diventa tautologico. Il criterio primario è la chiusura del bilancio con tutte le categorie misurate separatamente.
+Record rework, starting and ending inventory, and unclassified units. If `H` is calculated by subtracting `h` from `E`, the test becomes tautological. The primary criterion is balance closure with every category measured separately.
 
-## Esperimento C: estensione causale psicologica
+## Experiment C: causal psychology extension
 
-La causalità richiede un intervento. Proposta: partecipanti assegnati casualmente in schema fattoriale 2x2 a richiesta cognitiva alta/bassa e risorsa di supporto presente/assente. Misurare manipolazione, prestazione e affaticamento con strumenti distinti; analista cieco alle etichette dei gruppi; esclusioni e outcome primario preregistrati.
+Causality requires intervention. Proposed design: randomly assign participants in a 2x2 factorial design to high/low cognitive demand and support resource present/absent. Measure manipulation, performance, and fatigue with separate instruments; blind the analyst to group labels; preregister exclusions and the primary outcome.
 
-La previsione causale riguarda effetti e interazione delle manipolazioni su un esito indipendente. Non trasforma automaticamente il residuo definitorio `H:=E-h` in una legge psicologica. Servono approvazione etica, consenso informato, calcolo di potenza e raccolta da parte di ricercatori qualificati.
+The causal prediction concerns the effects and interaction of the manipulations on an independent outcome. It does not automatically turn the definitional residual `H:=E-h` into a psychological law. Ethical approval, informed consent, power analysis, and data collection by qualified researchers are required.

@@ -11,9 +11,6 @@ h = (EMA9 + EMA50 + VWAP)/3
 ## Certificato
 ![Certificate](./certificate-56c1a6a.webp)
 
-## Poster
-![Poster](./poster.webp)
-
 ## Licenza
 CC BY-NC-ND 4.0 - © 2026 dvx3 - Uso commerciale solo su autorizzazione.
 Contatto: github.com/tadaka9

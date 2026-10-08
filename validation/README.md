@@ -66,3 +66,8 @@ Get-Content .\empirical_results\psychology\REPORT.md
 The psychology script downloads the source archive, verifies its SHA-256 hash, and does not redistribute individual responses. Pass `--archive path\metro_burnout_repository_package.zip` for offline use. The pilot is only a partial internal replication. The economics script queries the World Bank and performs an accounting audit; because gross savings is defined using income, consumption, and net transfers, it is not independent validation.
 
 See `MATHEMATICAL_STATUS.md`, `LAB_PROTOCOL.md`, `PROSPECTIVE_PREREGISTRATION.md`, and `DATASET_AUDIT.md` for limitations and future work.
+
+For a distinct claim that `h` or `H` is a numerical constant, see
+`UNIVERSAL_CONSTANT_PROTOCOL.md`. Its `constant_validation.py` utility checks
+finite bounded-error measurements for compatibility with one `h=E-H` value;
+compatibility is not universal validation.

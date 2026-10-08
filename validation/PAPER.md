@@ -1,6 +1,6 @@
 # Plasticity of H = E - h: interdisciplinary interpretations and a reproducible falsification protocol
 
-**Methodological working paper - October 8, 2026. Version 0.4.** Includes exploratory tests of empirical extensions in occupational psychology and a real-data economics audit. It does not claim universal validation or a new physical law. Authorship and affiliation should be confirmed before formal publication.
+**Methodological working paper - October 8, 2026. Version 0.5.** Includes exploratory tests of empirical extensions in occupational psychology and a real-data economics audit. It does not claim universal validation or a new physical law. Authorship and affiliation should be confirmed before formal publication.
 
 ## Abstract
 
@@ -19,6 +19,8 @@ The symbols do not inherit the conventional meanings of similarly named physical
 **Deterministic hypothesis.** An independently observed `H` may be predicted to equal the difference within preregistered measurement tolerances. This requires an error model and independent measurements.
 
 **Statistical extension.** A project may posit an external outcome `Y=E-h+epsilon`, with a zero conditional mean for the error. This is an additional empirical hypothesis, not a consequence of subtraction. Failure to falsify it would not establish equality, equivalence, causality, or universality.
+
+**Constant hypothesis.** A universal relation and a universal numerical constant are distinct claims. The hypothesis `h(x)=c` requires independent measurements satisfying `E(x)-H(x)=c` throughout a prespecified domain; the hypothesis `H(x)=C` instead concerns `E(x)-h(x)`. A finite sample can reject a shared constant or show compatibility within uncertainty and an equivalence tolerance, but it cannot prove invariance over every domain.
 
 ## 3. Interdisciplinary map
 
@@ -81,6 +83,10 @@ The tests verify covered software behavior. They do not certify a scientific mod
 Before collection, choose one domain interpretation; document units, boundaries, independent measurements, uncertainty, margin, sampling design, exclusions, alternatives, and multiplicity correction. Preregister the protocol and reserve confirmation data that are untouched by model selection. Time series, panels, clusters, and repeated measures need appropriate splits and block or cluster inference.
 
 Separate exploration from independent confirmation. Redefining variables after a failure creates a new hypothesis that must be tested on new data. In mathematics, replace statistical testing with a precise statement, assumptions, proof, and counterexample search.
+
+For a numerical-constant claim, preregister whether the candidate is `h`, `H`, or another quantity. With bounded measurement errors, intersect the row-wise admissible intervals for the independently measured differences. With stochastic errors, estimate heterogeneity and require confidence intervals to lie within justified equivalence bounds; lack of statistical significance is not evidence of constancy. The executable finite-sample check and its limitations are documented in `UNIVERSAL_CONSTANT_PROTOCOL.md`.
+
+The economic logistic quantity `h_D` is bounded and dimensionless. Identifying it with the `h` subtracted from `E` requires an explicit measurement map or scale factor so that the subtraction uses a common additive scale. Without that bridge, `h_D` remains a domain-specific index rather than the same measured quantity as `h`.
 
 ## 10. Conclusion
 
